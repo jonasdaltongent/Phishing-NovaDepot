@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phishing of echt? · dia's · NovaDepot</title>
+  <link rel="icon" href="assets/novadepot-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/slides.css">
+  <style>
+    .compact .two { flex: 0 0 auto; }
+    .compact .panel p { margin-bottom: 10px; }
+    .compact .panel p:last-child { margin-bottom: 0; }
+    .qhead { font-size: 30px; font-weight: 700; margin: 0 0 6px; }
+    .qcol .opt { font-size: 26px; padding: 8px 16px; }
+    .qcol .opt .n { width: 46px; height: 46px; font-size: 24px; }
+    .klok { font-size: 22px; color: #4D5573; }
+    .steps1 { margin: 0; padding-left: 1.2em; }
+    .steps1 li { font-size: 27px; margin-bottom: 14px; }
+    .steps1 li:last-child { margin-bottom: 0; }
+    .lbl { font-weight: 700; font-size: 22px !important; margin: 0 0 10px; color: var(--navy-deep); }
+    .rood { color: #A0372A; font-weight: 700; }
+    .groen { color: #1F7A55; font-weight: 700; }
+    .vond { list-style: none; padding: 0 !important; margin: 0 0 14px; display: grid; gap: 12px; }
+    .vond li { display: grid; grid-template-columns: 56px 1fr; gap: 16px; align-items: center; background: #fff; border: 2px solid #D6D5CB; border-radius: 14px; padding: 10px 18px; font-size: 26px !important; margin: 0 !important; line-height: 1.3; }
+    .vond .nr { width: 46px; height: 46px; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 700; font-size: 24px; display: flex; align-items: center; justify-content: center; }
+    /* een nagemaakt venster Nieuw bericht (kijk naar de mail van Tom) */
+    .dmail { background: #fff; border: 2px solid #9AA0A6; border-radius: 12px 12px 6px 6px; overflow: hidden; font-family: Arial, Helvetica, sans-serif; font-size: 23px; color: #202124; box-shadow: 0 8px 24px rgba(29,35,64,.15); }
+    .dm-kop { background: #F2F6FC; font-weight: 700; font-size: 20px; padding: 8px 18px; }
+    .dm-veld { display: flex; gap: 14px; padding: 8px 18px; border-bottom: 1px solid #E3E3E3; font-size: 21px; }
+    .dm-veld span { color: #5F6368; min-width: 120px; }
+    .dm-veld .leeg { color: #A0372A; font-style: italic; }
+    .dm-tekst { padding: 14px 18px 4px; }
+    .dm-tekst p { margin: 0 0 12px !important; font-size: 23px !important; line-height: 1.3 !important; }
+    /* de zes bouwstenen: een nummer en de naam links, wat erin staat rechts */
+    .dbouw { background: #fff; border: 2px solid #9AA0A6; border-radius: 12px 12px 6px 6px; overflow: hidden; font-family: Arial, Helvetica, sans-serif; box-shadow: 0 8px 24px rgba(29,35,64,.15); }
+    .db-kop { background: #F2F6FC; font-weight: 700; font-size: 21px; padding: 6px 18px; }
+    .db-veld { display: flex; gap: 14px; padding: 6px 18px; border-bottom: 1px solid #E3E3E3; font-size: 22px; color: #5F6368; }
+    .db-veld span { min-width: 150px; }
+    .db-rij { display: grid; grid-template-columns: 290px 1fr; gap: 16px; align-items: center; padding: 10px 18px; border-bottom: 1px dashed #D6D5CB; }
+    .db-rij:last-child { border-bottom: 0; }
+    .db-naam { display: flex; align-items: center; gap: 12px; font-weight: 700; color: var(--navy-deep); font-size: 27px; }
+    .db-naam b { flex: none; width: 42px; height: 42px; border-radius: 50%; background: var(--navy); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 23px; }
+    .db-tekst { font-size: 26px; color: #202124; line-height: 1.2; }
+    .ondw { background: #fff; border: 3px solid var(--navy); border-radius: 12px; padding: 8px 16px; margin: 0; font-family: Arial, sans-serif; font-size: 24px !important; line-height: 1.25 !important; }
+    .ondw .lblk { display: block; font-size: 18px; color: #5F6368; margin-bottom: 2px; }
+    .ondw.slecht { border-color: #A0372A; }
+    .ondw.goed { border-color: var(--ok); }
+    .groot { font-size: 30px !important; }
+    .markeer { background: #FCD6CF; border-radius: 6px; padding: 0 8px; font-weight: 700; }
+      /* Les 13: een bericht met een link die je aanwijst, de statusbalk, de vragen van Safeonweb, de inbox van Tom */
+    .dbericht { background: #fff; border: 2px solid #9AA0A6; border-radius: 12px 12px 6px 6px; overflow: hidden; font-family: Arial, Helvetica, sans-serif; color: #202124; box-shadow: 0 8px 24px rgba(29,35,64,.15); }
+    .dbericht .dm-kop { background: #F2F6FC; font-weight: 700; font-size: 20px; padding: 8px 18px; }
+    .dbericht .dm-veld { display: flex; gap: 14px; padding: 8px 18px; border-bottom: 1px solid #E3E3E3; font-size: 21px; }
+    .dbericht .dm-veld span { color: #5F6368; min-width: 120px; }
+    .dbericht .dm-tekst { padding: 14px 18px 6px; }
+    .dbericht .dm-tekst p { margin: 0 0 12px !important; font-size: 23px !important; line-height: 1.3 !important; }
+    .dlnk { display: inline-block; background: #0B57D0; color: #fff; font-weight: 700; font-size: 22px; border-radius: 99px; padding: 6px 24px; cursor: pointer; }
+    .dlnk:hover { background: #0842A0; }
+    .dstatus { min-height: 40px; display: flex; align-items: center; padding: 6px 18px; background: #F1F3F4; border-top: 1px solid #DADCE0; font-family: "Segoe UI", Arial, sans-serif; font-size: 21px; color: #80868B; font-style: italic; overflow-wrap: anywhere; }
+    .dstatus.aan { color: #202124; font-style: normal; font-weight: 700; }
+    .adresbalk { display: inline-flex; align-items: center; background: #fff; border: 2px solid #9AA0A6; border-radius: 99px; padding: 8px 26px; font-family: "Segoe UI", Arial, sans-serif; font-size: 30px; color: #202124; margin: 8px 0 18px; }
+    .dvragen { list-style: none; counter-reset: v; margin: 0; padding: 0 !important; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+    .dvragen li { counter-increment: v; display: grid; grid-template-columns: 52px 1fr; gap: 14px; align-items: center; background: #fff; border: 2px solid #D6D5CB; border-radius: 14px; padding: 12px 18px; margin: 0 !important; font-size: 30px !important; line-height: 1.15 !important; }
+    .dvragen li::before { content: counter(v); width: 46px; height: 46px; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 700; font-size: 24px; display: flex; align-items: center; justify-content: center; }
+    .dvragen li.breed { grid-column: 1 / -1; }
+    .dinbox { background: #fff; border: 2px solid #9AA0A6; border-radius: 12px 12px 6px 6px; overflow: hidden; font-family: Arial, Helvetica, sans-serif; box-shadow: 0 8px 24px rgba(29,35,64,.15); }
+    .dinbox .db-kop { font-size: 21px; padding: 8px 18px; }
+    .di-rij { display: grid; grid-template-columns: 1fr 44px; gap: 16px; align-items: center; padding: 11px 18px; border-bottom: 1px solid #E3E3E3; font-size: 26px; font-weight: 700; color: var(--navy-deep); }
+    .di-rij:last-child { border-bottom: 0; }
+    .di-rij svg { width: 36px; height: 36px; fill: none; stroke: var(--navy); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .dletters { display: flex; gap: 12px; align-items: center; margin-top: 14px; font-size: 26px; font-weight: 700; color: var(--navy-deep); }
+    .dletters b { width: 56px; height: 62px; border: 3px dashed var(--peri); border-radius: 10px; background: #fff; color: var(--peri); display: flex; align-items: center; justify-content: center; font-size: 32px; font-family: "Montserrat", Arial, sans-serif; }
+    .na-antwoord { display: none; margin-top: 8px; font-size: 25px; }
+    .slide.revealed .na-antwoord { display: block; }
+  </style>
+</head>
+<body>
+<div class="hud"><span id="counter"></span> · <kbd>→</kbd> verder · <kbd>F</kbd> volledig scherm · <kbd>N</kbd> notities</div>
+<div class="deck"><div class="stage">
+
+<!-- 1 · vaste startdia -->
+<section class="slide start">
+  <div class="start-kop">
+    <div>
+      <p class="kicker">Toegepaste Informatica · les 13</p>
+      <h1>Phishing of echt?</h1>
+    </div>
+    <span class="start-zo">Zo start je</span>
+  </div>
+  <ol class="startroute">
+    <li><div class="sr-beeld"><div class="pc-scherm"><span class="pc-avatar"></span><span class="pc-veld">••••••</span></div><div class="pc-voet"></div></div><span class="sr-tekst">Meld je aan op de computer.</span></li>
+    <li><div class="sr-beeld"><span class="url-balk"><img class="logo" src="assets/logos/classroom.svg" alt="">classroom.google.com</span><span class="url-knop">Inloggen</span></div><span class="sr-tekst">Ga in Chrome naar Classroom. Klik op <span class="knop">Inloggen</span>.</span></li>
+    <li><div class="sr-beeld"><span class="login-veld">…<b>@dalton.gent</b></span><span class="login-veld">••••••••</span></div><span class="sr-tekst">Log in met je schoolaccount.</span></li>
+    <li><div class="sr-beeld"><div class="lesgroep"><span class="lesgroep-kop">… 2027 - Informatica</span></div></div><span class="sr-tekst">Klik op je klas: 3ORLO, 4ORLOa of 4ORLOb.</span></li>
+    <li><div class="sr-beeld"><div class="tabs"><span class="tab-grijs"></span><span class="tab-aan">Schoolwerk</span><span class="tab-grijs"></span></div></div><span class="sr-tekst">Klik op <span class="knop">Schoolwerk</span>.</span></li>
+    <li><div class="sr-beeld"><span class="opdr-rij"><span class="opdr-ic"></span>Communicatie 3 — Phishing…</span><span class="opdr-link">Instructies bekijken</span></div><span class="sr-tekst">Klik op de opdracht › <span class="knop">Instructies bekijken</span>.</span></li>
+    <li><div class="sr-beeld"><span class="bijl-chip aan"><img class="logo" src="assets/logos/lespagina.webp" alt="">Les 13 · Phishing of echt?</span></div><span class="sr-tekst">Klik op de lespagina.</span></li>
+    <li class="klaar">Klaar? Laat de lespagina open en kijk naar het bord.</li>
+  </ol>
+  <template class="note">
+    <p><strong>Lesstart (0–1'). De vaste startdia</strong> (sinds 09-10-2026, elke les dezelfde, voor alle klassen). Laat ze op het bord staan terwijl de leerlingen aanmelden.</p>
+    <p>Het <strong>wachtwoord van de computers</strong> staat niet op de dia: de dia's staan openbaar online. Zeg het, of schrijf het op het bord.</p>
+    <p>Ga verder als de meesten de lespagina open hebben. <strong>Duo's</strong>: zeg wie naast wie zit, of laat het op het bord staan (een oneven aantal: één trio).</p>
+  </template>
+</section>
+
+<!-- 2 · lesstart: ophalen uit les 12, dan een herkenbare situatie -->
+<section class="slide met-mascotte" data-answer>
+  <img class="mascotte" src="assets/mascotte/dalton_denken.webp" alt="" width="240" height="240">
+  <p class="kicker">Lesstart · 3 minuten</p>
+  <h2>Weet je het nog?</h2>
+  <div class="two" style="grid-template-columns: 330px 1fr; flex: 0 0 auto">
+    <div class="panel">
+      <p class="lbl">Les 12 · Aan, Cc en Bcc</p>
+      <p style="font-size:26px">Lotte mailt <strong>30 klanten</strong> die elkaar niet kennen.</p>
+    </div>
+    <div class="qcol">
+      <p class="qhead">Waar zet ze hun adressen?</p>
+      <div class="opts">
+        <div class="opt"><span class="n">A</span>Bij Aan</div>
+        <div class="opt"><span class="n">B</span>Bij Cc</div>
+        <div class="opt right"><span class="n">C</span>Bij Bcc</div>
+      </div>
+    </div>
+  </div>
+  <p class="answer">Bij Bcc: dan ziet niemand de adressen van de anderen.</p>
+  <p class="na-antwoord"><strong>Nu iets anders:</strong> wie kreeg al eens een vreemde sms over een pakje? <em>1 op 4 Vlaamse jongeren</em> kreeg vorig jaar een phishingbericht.</p>
+  <template class="note">
+    <p><strong>Lesstart (3'), ophalen uit les 12.</strong> Iedereen antwoordt tegelijk met vingers: 1, 2 of 3 vingers voor A, B of C. Druk daarna op → voor het antwoord. Wie A of B kiest: <em>"Wie ziet dan de adressen van de anderen?"</em></p>
+    <p><strong>De herkenbare situatie</strong> (druk nog eens op →): <em>"Wie kreeg al eens een vreemde sms over een pakje, of een prijs?"</em> Handen. Het cijfer: 1 op 4 Vlaamse jongeren kreeg het voorbije jaar met phishing te maken (Apenstaartjaren 2026, p. 69). <em>"Vandaag leer je zo'n bericht herkennen."</em></p>
+  </template>
+</section>
+
+<!-- 3 · lesdoel -->
+<section class="slide met-mascotte">
+  <img class="mascotte" src="assets/mascotte/dalton_wijzen_links.webp" alt="" width="240" height="240">
+  <p class="kicker">Ik doe · dia 1 van 4</p>
+  <h2>Wat kan je straks?</h2>
+  <ul class="rules">
+    <li>Je zegt of een bericht <strong>echt of vals</strong> is, en je noemt twee dingen die dat tonen.</li>
+    <li>Je <strong>wijst een link aan</strong> met je muis en leest het juiste woord van het adres.</li>
+    <li>Je weet wat je doet met een vals bericht, en <strong>wat als je toch klikte</strong>.</li>
+  </ul>
+  <p class="klok" style="margin-top:6px">Ik leg 5 minuten uit. Daarna werken jullie in duo met de lespagina, en kom ik bij jullie langs.</p>
+  <template class="note">
+    <p><strong>Ik doe, 0'30".</strong> Lesdoel voorlezen, niet toelichten. Zeg er meteen bij dat de uitleg maar vijf minuten duurt en dat alles daarna op de lespagina staat.</p>
+    <p>Zeg ook: <em>"Niemand klikt vandaag op een echte link. De berichten zijn tekeningen."</em></p>
+  </template>
+</section>
+
+<!-- 4 · de opdracht van Sara -->
+<section class="slide compact">
+  <p class="kicker">Ik doe · dia 2 van 4 · kijk naar de inbox van Tom</p>
+  <h2 style="margin-bottom:14px">Jullie zijn het veiligheidsteam</h2>
+  <div class="two" style="grid-template-columns: 1.1fr 1fr; align-items: start">
+    <div>
+      <div class="panel" style="margin-bottom:14px">
+        <p class="lbl" style="margin-bottom:6px">Sara Claes, preventiedienst</p>
+        <p style="font-size:26px;margin:0"><em>“Bekijk de inbox van Tom. Welke berichten zijn echt, welke vals, en wat moet Tom doen?”</em></p>
+      </div>
+      <ol class="steps1">
+        <li>Jullie bespreken <strong>samen</strong>.</li>
+        <li>Elk schrijft in het <strong>eigen</strong> werkdocument.</li>
+        <li>Een kamer gaat pas open als het <strong>slot</strong> juist is.</li>
+      </ol>
+    </div>
+    <div>
+      <div class="dinbox">
+        <div class="db-kop">Inbox van Tom · 4 berichten</div>
+        <div class="di-rij"><span>Kamer 1 · mail</span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+        <div class="di-rij"><span>Kamer 2 · sms</span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+        <div class="di-rij"><span>Kamer 3 · mail</span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+        <div class="di-rij"><span>Kamer 4 · mail</span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+      </div>
+      <div class="dletters">Codewoord: <b>?</b><b>?</b><b>?</b><b>?</b></div>
+    </div>
+  </div>
+  <template class="note">
+    <p><strong>Ik doe, 1'.</strong> <em>"Sara van de preventiedienst heeft gemerkt dat er valse berichten rondgaan bij NovaDepot. Tom twijfelt over vier berichten in zijn inbox. Jullie zijn vandaag haar veiligheidsteam."</em></p>
+    <p><strong>Lees de tekening hardop voor</strong> (een nieuw soort tekening): <em>"Dit is de inbox van Tom. Vier berichten, vier kamers, elk met een slot. Een slot gaat open als jullie twee vragen juist beantwoorden, en dan krijg je een letter. Vier letters: het codewoord."</em></p>
+    <p>Drie regels: samen bespreken; elk in het eigen werkdocument; elk levert zelf in. De sloten staan op de lespagina (stap 2 en 3).</p>
+  </template>
+</section>
+
+<!-- 5 · demo: een vals bericht -->
+<section class="slide compact">
+  <p class="kicker">Ik doe · dia 3 van 4 · demo: het voorbeeld in deel 1</p>
+  <h2 style="margin-bottom:12px">Uw mailbox is vol</h2>
+  <div class="two" style="grid-template-columns: 1.25fr 1fr; align-items: start">
+    <div class="dbericht">
+      <div class="dm-kop">Inbox van Tom · voorbeeld</div>
+      <div class="dm-veld"><span>Van</span>NovaDepot Helpdesk &lt;helpdesk@novadepot-mail.example&gt;</div>
+      <div class="dm-veld"><span>Onderwerp</span>DRINGEND: uw mailbox is vol</div>
+      <div class="dm-tekst">
+        <p>Beste gebruiker,</p>
+        <p>Uw mailbox is 99 % vol. Binnen 24 uur worden uw nieuwe berichten verwijderd. Meld u nu aan om uw mailbox gratis te vergroten.</p>
+        <p><span class="dlnk" role="link" data-adres="novadepot.mailbox-check.example/login" data-http>Mailbox vergroten</span></p>
+        <p style="margin-bottom:6px !important">NovaDepot IT</p>
+      </div>
+      <div class="dstatus">Wijs een link aan: hier verschijnt het adres.</div>
+    </div>
+    <div>
+      <div class="panel reveal-item" style="margin-bottom:14px">
+        <p class="lbl" style="margin-bottom:6px">Wijs de knop aan</p>
+        <p style="font-size:24px;margin:0">Het woord vóór <strong>.example</strong> is de echte website: <span class="markeer">mailbox-check</span>, niet novadepot.</p>
+      </div>
+      <div class="panel reveal-item">
+        <p class="bad-label">Vals</p>
+        <p style="font-size:24px;margin:0">Tom <strong>klikt niet</strong> en meldt de mail aan Sara.</p>
+      </div>
+    </div>
+  </div>
+  <template class="note">
+    <p><strong>Ik doe, 2' — hardop denkend.</strong> Dit is het voorbeeld in deel 1 van het werkdocument, ingevuld in het grijs. <em>"Is het onverwacht? Dringend? Binnen 24 uur. Wie stuurt het: novadepot-mail, niet novadepot. Wat vraagt het: aanmelden, dus mijn wachtwoord. En de knop…"</em></p>
+    <p><strong>Zweef met je muis over de knop</strong> (niet klikken: een klik toont hetzelfde adres): onderaan verschijnt het adres. Lees het hardop en wijs het woord vóór <em>.example</em> aan: <em>mailbox-check</em>. Druk op → voor de uitleg.</p>
+    <p>Druk nog eens op →: <em>"Vals. Wat doet Tom? Niet klikken, het melden aan Sara."</em> Dat staat ingevuld in deel 1.</p>
+  </template>
+</section>
+
+<!-- 6 · de vragen van Safeonweb -->
+<section class="slide compact">
+  <p class="kicker">Ik doe · dia 4 van 4 · kijk naar de zeven vragen</p>
+  <h2 style="margin-bottom:12px">Zeven vragen bij elk bericht</h2>
+  <ol class="dvragen">
+    <li><span>Is het <strong>onverwacht</strong>?</span></li>
+    <li><span>Is het <strong>dringend</strong>?</span></li>
+    <li><span>Ken je de <strong>afzender</strong>?</span></li>
+    <li><span>Is de <strong>vraag vreemd</strong>?</span></li>
+    <li><span>Waar gaat de <strong>link</strong> naartoe?</span></li>
+    <li><span>Word je <strong>persoonlijk</strong> aangesproken?</span></li>
+    <li class="breed"><span>Vraagt het een <strong>betaling</strong>?</span></li>
+  </ol>
+  <p style="margin-top:16px;font-size:28px"><strong>Geen enkel ding bewijst het alleen.</strong> Ook een echt bericht kan een link hebben.</p>
+  <template class="note">
+    <p><strong>Ik doe, 1'30".</strong> <strong>Lees de tekening de eerste keer hardop voor</strong> (een nieuw soort tekening): <em>"Dit zijn de vragen die Safeonweb aanraadt. Je stelt ze bij elk bericht, van 1 tot 7. Een enkel ja bewijst niets: kijk naar meer vragen samen."</em></p>
+    <p>Loop ze kort af met het voorbeeld van dia 5: onverwacht, dringend, het adres, de vraag, de link. Zeg: <em>"Een echt bericht kan ook een link hebben. Dan kijk je waar hij naartoe gaat."</em></p>
+    <p>Zeg ook: <em>"Dezelfde vragen staan op de lespagina, in stap 2."</em></p>
+  </template>
+</section>
+
+<!-- 7 · controle -->
+<section class="slide " data-answer>
+  <p class="kicker">Controle · iedereen antwoordt</p>
+  <h2>Welk woord telt?</h2>
+  <div class="qcol">
+    <p class="qhead">Naar welke website gaat deze link?</p>
+    <div class="adresbalk"><span>pakjesnel.</span><span>betaal-nu</span><span>.example/tom</span></div>
+    <div class="opts">
+      <div class="opt"><span class="n">A</span>pakjesnel</div>
+      <div class="opt right"><span class="n">B</span>betaal-nu</div>
+      <div class="opt"><span class="n">C</span>tom</div>
+    </div>
+  </div>
+  <p class="answer">Het woord vlak vóór <em>.example</em>: betaal-nu. Dat is de echte website, niet pakjesnel.</p>
+  <template class="note">
+    <p><strong>Controle (1'). Iedereen antwoordt tegelijk</strong>: 1, 2 of 3 vingers voor A, B of C. Kijk rond en onthoud wie A of C toont.</p>
+    <p>Wie A kiest: <em>"Dat staat vooraan, maar wat staat er vlak vóór .example?"</em> Wie C kiest: <em>"Dat staat na de schuine streep: dat is een pagina op de website, niet de website."</em></p>
+    <p>Druk op → voor het antwoord. Wie A toont, komt zo meteen even bij je.</p>
+  </template>
+</section>
+
+<!-- 8 · iedereen doet stap 1 -->
+<section class="slide ">
+  <p class="kicker">Samen · 3 minuten</p>
+  <h2>Iedereen doet stap 1</h2>
+  <div class="panel">
+    <ol class="steps1">
+      <li>Ga naast je <strong>duopartner</strong> zitten. Open de lespagina, klik op <strong>Stap 1 · Klaarzetten</strong>.</li>
+      <li>Open je <strong>eigen</strong> werkdocument. Lees het kader en het voorbeeld in deel 1.</li>
+      <li>Klaar? Steek je <strong>duim</strong> op.</li>
+    </ol>
+  </div>
+  <template class="note">
+    <p><strong>Samen (3').</strong> Iedereen doet stap 1 tegelijk. Loop rond en kijk naar de schermen: elk van het duo het eigen werkdocument open, met de naam van de leerling in de titel?</p>
+    <p>Duim op bij de meesten: ga naar de volgende dia. Wie op de controlevraag fout had of hier vastloopt, blijft 3 tot 5 minuten bij je. De rest begint aan stap 2.</p>
+    <p>Zeg één zin over <em>Toon stapjes</em>: <em>"Weet je niet hoe het moet? Klik op Toon stapjes, dan zie je elk klein stapje met een beeld."</em> En: <em>"Typ je antwoorden in je eigen werkdocument, in de lichtblauwe vakken."</em></p>
+  </template>
+</section>
+
+<!-- 9 · zo werk je verder -->
+<section class="slide compact met-mascotte">
+  <img class="mascotte" src="assets/mascotte/dalton_laptop.webp" alt="" width="240" height="240">
+  <p class="kicker">Keuzewerktijd · <span class="eindtijd">40 minuten</span></p>
+  <h2>Zo werk je verder</h2>
+  <div class="two" style="grid-template-columns: 1.6fr 1fr">
+    <div>
+      <ol class="steps1 kloklijst" data-lesmomenten="2026-10-28/9.15/10.05/3ORLO/2;2026-10-28/10.25/11.15/4ORLOb/3;2026-10-29/13.45/14.35/4ORLOa/7" data-beltijden="8.25-9.15 9.15-10.05 10.25-11.15 11.15-12.05 12.05-12.55 13.45-14.35 14.35-15.25 15.25-16.15 16.15-17.05">
+        <li data-min="3" data-samen>Klaarzetten <span class="klok tijd">samen &#10003;</span></li>
+        <li data-min="12">Kamer 1 en 2 <span class="klok tijd">12'</span></li>
+        <li data-min="12">Kamer 3 en 4 <span class="klok tijd">12'</span></li>
+        <li data-min="6">Ontsnapt! <span class="klok tijd">6'</span></li>
+        <li data-min="7">Nalezen en inleveren <span class="klok tijd">7'</span></li>
+      </ol>
+    </div>
+    <div class="panel navy">
+      <p style="font-size:25px"><strong>Vast?</strong></p>
+      <p style="font-size:26px">1. <em>Toon stapjes</em><br>2. Je duopartner<br>3. Ik</p>
+      <p style="margin-top:14px;font-size:22px">Vink af in de <strong>checklist</strong>.</p>
+    </div>
+  </div>
+  <p class="klok" style="margin-top:18px;font-size:25px">
+    <strong>Alles staat in de opdracht in <span class="met-logo"><img class="logo" src="assets/logos/classroom.svg" alt="">Google Classroom</span></strong> <em>Communicatie 3 — Phishing of echt?</em>: de lespagina en je werkdocument.
+    Elk van jullie levert het <strong>eigen werkdocument</strong> in.<br>Adres: jonasdaltongent.github.io/Phishing-NovaDepot/<!-- PAS AAN --></p>
+  <template class="note">
+    <p><strong>Keuzewerktijd.</strong> Laat deze dia staan zolang ze werken. <strong>De kloktijden</strong> komen uit de planning: buiten de les toont de dia de uren van het geplande lesmoment (met de dag en de klas erbij); tijdens dat lesmoment rekent ze vanaf nu tot de bel, min 1 minuut voor de exitvraag. Stap 1 is al samen gedaan (dia 8). Te vroeg getoond, of geef je de les op een ander uur? Druk op <strong>T</strong>.</p>
+    <p><strong>Eerste rondgang:</strong> heeft <strong>elke</strong> leerling van het duo het eigen werkdocument open (de naam in de titel)? <strong>Tweede rondgang, rond kamer 2:</strong> wijzen ze de link aan met hun muis? Staat er bij <em>Wat doet Tom?</em> geen <em>antwoorden op de mail</em>?</p>
+    <p>Denkvragen: <em>"Wie stuurt dit echt? Kijk naar het adres."</em> · <em>"Waar gaat die link naartoe?"</em> · <em>"Waarom bel je niet het nummer uit de mail?"</em> · <em>"Waarom is bericht 4 echt, ook al staat er een link in?"</em></p>
+    <p>Een duo dat vastzit: een hint, geen antwoord. Werkt één leerling niet mee, zet die naast een ander duo (een trio). Minimumroute: deel 2, deel 3 en vraag 4a, en inleveren; vraag 4b mag later, vóór de deadline.</p>
+    <p><strong>Vergeet niet</strong> het adres op deze dia aan te passen als de repository anders heet.</p>
+  </template>
+</section>
+
+<!-- 10 · exitvraag -->
+<section class="slide met-mascotte" data-answer>
+  <img class="mascotte" src="assets/mascotte/dalton_hulp.webp" alt="" width="240" height="240">
+  <p class="kicker">Afsluiten · laatste minuut</p>
+  <h2 style="margin-bottom:10px">Eén vraag voor je vertrekt</h2>
+  <div class="qcol">
+    <p class="qhead" style="font-size:25px">Tom krijgt een mail van “de directeur”, van een adres dat hij niet kent: <em>“Koop snel vijf cadeaubonnen van 100 euro en stuur me de codes. Zeg het tegen niemand.”</em> Wat doet hij?</p>
+    <div class="opts">
+      <div class="opt" style="font-size:24px"><span class="n">A</span>Meteen kopen, het is de baas</div>
+      <div class="opt right" style="font-size:24px"><span class="n">B</span>De directeur bellen op het nummer dat hij al kent</div>
+      <div class="opt" style="font-size:24px"><span class="n">C</span>Op de mail antwoorden en vragen of het echt is</div>
+    </div>
+  </div>
+  <p class="answer" style="font-size:24px">Bellen op een nummer dat Tom al kent. Wie op de mail antwoordt, praat met de oplichter.</p>
+  <p style="margin-top:6px;font-size:24px"><strong>Vertrek je? Log uit, of druk op Windows + L.</strong><br>Volgende les: <strong>Uitnodigen met de agenda</strong>.</p>
+  <template class="note">
+    <p><strong>Afsluiting, laatste minuut van de keuzewerktijd.</strong> Laat twee of drie leerlingen antwoorden, en druk dan op → voor het antwoord. Dit is een situatie die ze nog niet zagen (CEO-fraude, Safeonweb 07-09-2026): wie C kiest, praat met de oplichter. Wie A kiest: <em>"Wie vraagt je geheim te houden en snel te handelen?"</em></p>
+    <p>Zeg mondeling dat wie niet klaar is, toch inlevert, en dat elk van het duo zelf inlevert.</p>
+    <p><strong>Vertrekken:</strong> iedereen logt uit, of drukt op Windows + L.</p>
+    <p>Na de les: kijk in de werkdocumenten naar deel 2 en 3: staat bij elk bericht echt of vals, met twee dingen die bij dat bericht passen? Staat bij bericht 3 en 2 geen <em>antwoorden op de mail</em>? Staat in deel 4 het codewoord?</p>
+  </template>
+</section>
+
+</div></div>
+<div class="notes" id="notes"></div>
+<script src="js/slides.js"></script>
+</body>
+</html>

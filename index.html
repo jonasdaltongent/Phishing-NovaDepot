@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lespagina · Les 13 · Phishing of echt? · NovaDepot</title>
+  <link rel="icon" href="assets/logos/lespagina-icon.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-storage="novadepot_phishing_v1_" data-modus-start="kort" data-laatste-stap="5" data-ai-hulp="uit">
+
+<!-- Pictogrammen: eenvoudige lijntekeningen, eigen werk. Gebruik: een svg met class "ic" en daarin use met href naar het symbool. -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4 2.5 4H5"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 5h6a4 4 0 0 1 4 4v11a3 3 0 0 0-3-3H2z"/><path d="M22 5h-6a4 4 0 0 0-4 4v11a3 3 0 0 1 3-3h7z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 10"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4.5 6h.01M4.5 12h.01M4.5 18h.01" stroke-width="3"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5l9.5 17h-19z"/><path d="M12 10v4.5M12 17.5h.01"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.4 2.5c-.6.3-1 .8-1 1.5v.4M12 17h.01"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5H9l2 2h8.5A1.5 1.5 0 0 1 21 8.5v10a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5z"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M12 15V3M7 8l5-5 5 5"/><path d="M4 14v6h16v-6"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9l-5.2 2.8 1-5.9-4.3-4.1 5.9-.8z"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M8 12V6a1.5 1.5 0 0 1 3 0v5"/><path d="M11 10.5V4.5a1.5 1.5 0 0 1 3 0v6"/><path d="M14 10.5V6a1.5 1.5 0 0 1 3 0v7.5"/><path d="M8 11.5l-1.5-1.5a1.6 1.6 0 0 0-2.3 2.3l3.6 4.2A6.5 6.5 0 0 0 17 13.5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16.5 14.2a5 5 0 0 1 5 5"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M8 3v4M16 3v4M3.5 10h17"/></symbol>
+  <symbol id="i-hash" viewBox="0 0 24 24"><path d="M9.5 4L7.5 20M16.5 4l-2 16M4 9h16M3.5 15h16"/></symbol>
+  <symbol id="i-sort" viewBox="0 0 24 24"><path d="M4 7h9M4 12h6M4 17h3"/><path d="M17 5v14M14 16l3 3 3-3"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6h.01"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></symbol>
+</svg>
+
+<div class="teacher-banner">Leraarweergave: alle kamers en het blok van stap 4 staan open, en er wordt niets onthouden. Leerlingen zien dit niet.</div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html" title="Naar het begin van de les">
+      <img src="assets/novadepot-logo.svg" alt="NovaDepot">
+      <span class="brand-lesson">Les 13 · Phishing of echt?</span>
+    </a>
+    <span class="topbar-spacer"></span>
+    <img class="dalton-mark" src="assets/dalton-gent-logo.png" alt="GO! Dalton Gent">
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- ============ LINKS: de route ============ -->
+  <nav class="route" aria-label="Stappenplan">
+    <p class="route-title">Stappenplan</p>
+    <button class="nav-btn" type="button" data-step="start"><span class="nav-num"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><span class="nav-lbl">Start</span></button>
+    <button class="nav-btn" type="button" data-step="theorie"><span class="nav-num"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></span><span class="nav-lbl">Theoriekaart</span></button>
+
+    <p class="route-group">De inbox van Tom</p>
+    <button class="nav-btn" type="button" data-step="1"><span class="nav-num"><span class="nav-n">1</span><svg class="ic nav-check" aria-hidden="true"><use href="#i-check"/></svg></span><span class="nav-lbl">Klaarzetten</span></button>
+    <button class="nav-btn" type="button" data-step="2"><span class="nav-num"><span class="nav-n">2</span><svg class="ic nav-check" aria-hidden="true"><use href="#i-check"/></svg></span><span class="nav-lbl">Kamer 1 en 2</span></button>
+    <button class="nav-btn" type="button" data-step="3"><span class="nav-num"><span class="nav-n">3</span><svg class="ic nav-check" aria-hidden="true"><use href="#i-check"/></svg></span><span class="nav-lbl">Kamer 3 en 4</span></button>
+
+    <p class="route-group">Ontsnapt!</p>
+    <button class="nav-btn" type="button" data-step="4"><span class="nav-num"><span class="nav-n">4</span><svg class="ic nav-check" aria-hidden="true"><use href="#i-check"/></svg></span><span class="nav-lbl">Ontsnapt!</span></button>
+    <button class="nav-btn" type="button" data-step="5"><span class="nav-num"><span class="nav-n">5</span><svg class="ic nav-check" aria-hidden="true"><use href="#i-check"/></svg></span><span class="nav-lbl">Nalezen en inleveren</span></button>
+    <button class="nav-btn extra" type="button" data-step="extra"><span class="nav-num"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg></span><span class="nav-lbl">Extra</span></button>
+  </nav>
+
+  <!-- ============ MIDDEN: één stap tegelijk ============ -->
+  <main id="main">
+
+    <!-- ===== START ===== -->
+    <section class="pane" id="pane-start" aria-labelledby="h-start">
+      <article class="card">
+        <header class="card-head met-mascotte">
+          <div>
+            <div class="tags"><span class="tag tag-where">Toegepaste Informatica · les 13</span></div>
+            <h1 id="h-start">Phishing of echt?</h1>
+          </div>
+          <img class="mascotte-kop" src="assets/mascotte/dalton_welkom.webp" alt="" width="120" height="120">
+        </header>
+        <div class="card-body">
+          <p class="intro">Sara van NovaDepot heeft een veiligheidsteam nodig. Jullie werken in duo: bekijk de inbox van Tom, ontmasker de valse berichten en ontsnap met het codewoord.</p>
+
+          <h2 class="sec">Wat heb je nodig?</h2>
+          <ol class="nodig">
+            <li class="nodig-item">
+              <div class="mock mock-opdracht" aria-hidden="true">
+                <div class="mo-midden">
+                  <div class="mo-titel"><img class="logo" src="assets/logos/classroom.svg" alt="">Communicatie 3 — Phishing of echt?</div>
+                  <div class="mo-chip"><img class="logo" src="assets/logos/lespagina.webp" alt=""><span>Lespagina · Les 13</span></div>
+                </div>
+                <div class="mo-werk">
+                  <div class="mo-werk-kop">Jouw werk</div>
+                  <div class="mo-chip"><img class="logo" src="assets/logos/docs.svg" alt=""><span>CO3_Phishing-of-echt</span></div>
+                  <div class="mo-knop">Inleveren</div>
+                </div>
+              </div>
+              <p class="nodig-naam"><img class="logo" src="assets/logos/classroom.svg" alt="">De opdracht in Google Classroom</p>
+              <p class="nodig-uitleg">Hier begin je. Hier lever je in.</p>
+            </li>
+            <li class="nodig-item">
+              <div class="mock mock-lespagina" aria-hidden="true">
+                <div class="ml-balk"></div>
+                <div class="ml-midden">
+                  <div class="ml-route"><span></span><span></span><span></span><span></span></div>
+                  <div class="ml-stap"><span class="ml-tag">Stap 1</span><span class="ml-lijn"></span><span class="ml-lijn kort"></span><span class="ml-lijn"></span></div>
+                </div>
+                <div class="ml-hier">Je bent hier</div>
+              </div>
+              <p class="nodig-naam"><img class="logo" src="assets/logos/lespagina.webp" alt="">Deze lespagina</p>
+              <p class="nodig-uitleg">Hier lees je de berichten en los je de sloten op.</p>
+            </li>
+            <li class="nodig-item inleveren">
+              <div class="mock mock-werkdocument" aria-hidden="true">
+                <div class="mw-balk"><img class="logo" src="assets/logos/docs.svg" alt="">CO3_Phishing-of-echt</div>
+                <div class="mw-blad"><div class="mw-venster"><div class="mw-kop">Bericht 1</div><div class="mw-veld">Echt of vals?</div><div class="mw-veld">Twee dingen</div><div class="mw-tekst"><span></span><span class="kort"></span></div></div></div>
+              </div>
+              <p class="nodig-naam"><img class="logo" src="assets/logos/docs.svg" alt="">Je werkdocument CO3</p>
+              <p class="nodig-uitleg">Hier schrijf je. Dit lever je in.</p>
+            </li>
+          </ol>
+
+          <h2 class="sec">Dit maak je vandaag</h2>
+          <p class="nodig-noot" style="margin-top:0">Vier berichten, vier kamers, vier sloten. Elk slot dat je openmaakt, geeft een letter. Samen vormen ze het codewoord. Je schrijft je antwoorden in je werkdocument. Je klikt nergens op een echte link: de berichten zijn tekeningen.</p>
+          <div class="inbox" role="img" aria-label="Tekening van de inbox van Tom: vier berichten, elk in een kamer met een slot dat nog dicht is. Eronder vier lege vakjes voor de vier letters van het codewoord."><div class="ib-kop">Inbox van Tom · 4 berichten</div><div class="ib-rij"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg><span class="ib-naam">Kamer 1 · mail<i></i></span><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg></div><div class="ib-rij"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg><span class="ib-naam">Kamer 2 · sms<i></i></span><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg></div><div class="ib-rij"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg><span class="ib-naam">Kamer 3 · mail<i></i></span><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg></div><div class="ib-rij"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg><span class="ib-naam">Kamer 4 · mail<i></i></span><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg></div></div><div class="letters" aria-hidden="true"><span class="lt-kop">Het codewoord:</span><span class="letter">?</span><span class="letter">?</span><span class="letter">?</span><span class="letter">?</span></div>
+
+          <h2 class="sec">Na deze les kan je</h2>
+          <ul class="doelen">
+            <li>zeggen of een bericht echt of vals is, en twee dingen noemen die dat tonen;</li>
+            <li>met je muis een link aanwijzen en het juiste woord van het adres lezen;</li>
+            <li>zeggen wat je doet met een vals bericht, en wat als je toch klikte.</li>
+          </ul>
+
+          <h2 class="sec">Zo werken jullie in duo</h2>
+          <ul class="doelen">
+            <li>Jullie bespreken elk bericht samen.</li>
+            <li>Elk van jullie schrijft de antwoorden in het <strong>eigen</strong> werkdocument.</li>
+            <li>Elk van jullie levert zelf in.</li>
+          </ul>
+
+          <h2 class="sec">Vast? Probeer het in deze volgorde</h2>
+          <ol class="vast">
+            <li><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg><span>Klik in de stap op <em>Toon stapjes</em></span></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg><span>Je duopartner</span></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-hand"/></svg><span>Je leraar</span></li>
+          </ol>
+
+          <p class="start-cta"><button class="btn btn-primary" type="button" data-goto="1">Start met stap 1 <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button></p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== THEORIEKAART ===== -->
+    <section class="pane" id="pane-theorie" aria-labelledby="h-theorie">
+      <article class="card">
+        <header class="card-head">
+          <div class="tags"><span class="tag tag-where">Spiekbriefje</span></div>
+          <h2 id="h-theorie">Theoriekaart</h2>
+        </header>
+        <div class="card-body">
+          <p class="intro">Alles op één plek. Kom hier terug als je iets niet meer weet.</p>
+
+          <div class="t-grid">
+            <section class="t-card">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg>Zo werkt elke les</h3>
+              <ul>
+                <li>Je start in Classroom, bij de opdracht van vandaag.</li>
+                <li>In de opdracht staan de lespagina en je werkdocument.</li>
+                <li>Klaar? Loop je werkdocument na en lever in.</li>
+              </ul>
+            </section>
+            <section class="t-card">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>Zo werken jullie in duo</h3>
+              <ul>
+                <li>Bespreek elk bericht samen.</li>
+                <li>Schrijf alles in je <strong>eigen</strong> werkdocument.</li>
+                <li>Elk levert zelf in.</li>
+              </ul>
+            </section>
+            <section class="t-card">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg>Wat is phishing?</h3>
+              <ul>
+                <li>Oplichting met een vals bericht: een mail, een sms, een chat.</li>
+                <li>Het woord komt van <em>fishing</em>, vissen. De oplichter gooit een lijn met aas uit. Wie bijt, hangt aan de haak.</li>
+                <li>Oplichters spelen in op angst, haast of nieuwsgierigheid.</li>
+              </ul>
+            </section>
+            <section class="t-card">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-help"/></svg>De vragen van Safeonweb</h3>
+              <ol>
+                <li>Onverwacht?</li>
+                <li>Dringend?</li>
+                <li>Ken je de afzender?</li>
+                <li>Een vreemde vraag?</li>
+                <li>Waar gaat de link naartoe?</li>
+                <li>Word je persoonlijk aangesproken?</li>
+                <li>Vraagt het een betaling?</li>
+              </ol>
+            </section>
+            <section class="t-card">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-link"/></svg>Waar gaat de link naartoe?</h3>
+              <ul>
+                <li>Wijs de link aan met je muis. Onderaan verschijnt het adres.</li>
+                <li>Lees het woord vlak vóór <strong>.example</strong> (of <em>.be</em>, <em>.com</em>) en vóór de eerste <strong>/</strong>. Dat is de echte website.</li>
+                <li><em>novadepot.mailbox-check.example</em>: de website is <em>mailbox-check</em>, niet novadepot.</li>
+              </ul>
+            </section>
+            <section class="t-card">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-check-circle"/></svg>Ook echt kan een link hebben</h3>
+              <ul>
+                <li>Een link is op zich geen bewijs dat een bericht vals is.</li>
+                <li>Kijk dan waar hij naartoe gaat, en kijk naar de andere vragen.</li>
+                <li>Geen enkel ding bewijst het alleen.</li>
+              </ul>
+            </section>
+            <section class="t-card">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Vals? Wat doe je?</h3>
+              <ul>
+                <li><strong>Niet klikken</strong>, <strong>niet betalen</strong>, geen bijlage openen.</li>
+                <li>Twijfel je? Kijk het na op een manier die je al kent: een nummer dat je al hebt, de echte website.</li>
+                <li>Bel niet het nummer uit het bericht en antwoord niet: dan praat je met de oplichter.</li>
+              </ul>
+            </section>
+            <section class="t-card">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg>Waar meld je het?</h3>
+              <ul>
+                <li>Een mail: doorsturen naar <strong>verdacht@safeonweb.be</strong>.</li>
+                <li>Een sms: een schermafbeelding maken en naar hetzelfde adres sturen.</li>
+                <li>Op het werk: ook aan de preventiedienst of de IT-verantwoordelijke.</li>
+              </ul>
+            </section>
+            <section class="t-card">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg>Je klikte toch? (les 09)</h3>
+              <ul>
+                <li>Vul niets meer in. Sluit de pagina.</li>
+                <li>Typte je een wachtwoord? Verander het meteen, ook als je het elders gebruikt.</li>
+                <li>Meld het, en waarschuw je contacten als er rare berichten in jouw naam vertrekken.</li>
+              </ul>
+            </section>
+            <section class="t-card wide">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>Woorden</h3>
+              <table class="t-rows">
+                <tr><th>phishing</th><td>oplichting met een vals bericht dat je laat klikken, betalen of iets geheims laat geven</td></tr>
+                <tr><th>afzender</th><td>wie het bericht stuurt; het adres bij <em>Van</em></td></tr>
+                <tr><th>domeinnaam</th><td>de naam van de website: het woord vóór <em>.be</em> of <em>.com</em> en vóór de eerste <em>/</em></td></tr>
+                <tr><th>oplichter</th><td>iemand die je bedriegt om geld of gegevens te krijgen</td></tr>
+                <tr><th>verdacht</th><td>je vertrouwt het niet: er klopt iets niet</td></tr>
+                <tr><th>factuurfraude</th><td>een vals rekeningnummer op een factuur, zodat je de oplichter betaalt</td></tr>
+              </table>
+            </section>
+            <section class="t-card wide warn">
+              <h3><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg>Veelgemaakte fouten</h3>
+              <ul>
+                <li>Alles vals noemen, ook een echt bericht. Niet elk bericht met een link of een vraag is vals.</li>
+                <li>Alleen op taalfouten letten. Ervaren oplichters schrijven foutloos.</li>
+                <li>Een bekende naam vertrouwen zonder naar het adres te kijken.</li>
+                <li>Naar de tekst van de link kijken, niet naar waar hij echt naartoe gaat.</li>
+                <li>Antwoorden op het bericht, of het nummer uit het bericht bellen om te vragen of het echt is.</li>
+                <li>Na een klik niets zeggen uit schaamte, in plaats van meteen het wachtwoord te veranderen en het te melden.</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== STAP 1 ===== -->
+    <section class="pane" id="pane-1" aria-labelledby="h-1">
+      <article class="card">
+        <header class="card-head">
+          <div class="tags"><span class="tag tag-step">Stap 1</span><span class="tag tag-where"><img class="logo" src="assets/logos/docs.svg" alt=""> Werkdocument</span></div>
+            <h2 id="h-1">Klaarzetten</h2>
+        </header>
+        <div class="card-body">
+          <p class="intro">Jullie zitten naast elkaar en elk opent het eigen werkdocument. Daarna bekijken jullie samen het voorbeeld.</p>
+          <div class="todo-box">
+            <div class="todo-head"><h3><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg> Wat moet je doen?</h3></div>
+            <ol class="doe">
+<li><span class="doe-tekst">Ga naast je <strong>duopartner</strong> zitten.</span><span class="sub">Elk van jullie opent het eigen werkdocument.</span></li>
+<li><details class="stapjes" open><summary><span class="doe-tekst">Open je werkdocument <strong>CO3_Phishing-of-echt</strong>.</span><span class="stapjes-knop" aria-hidden="true"></span></summary>
+<ol class="klein">
+<li><p>Kijk in je opdracht in <strong class="met-logo"><img class="logo" src="assets/logos/classroom.svg" alt="">Google Classroom</strong> rechts, bij <strong>Jouw werk</strong>.</p><div class="mock mock-opdracht mini-mock" role="img" aria-label="Tekening van de opdracht in Google Classroom. Rechts het vak Jouw werk, in een rood kader."><div class="mo-midden"><div class="mo-titel"><img class="logo" src="assets/logos/classroom.svg" alt="">Communicatie 3 — Phishing of echt?</div><div class="mo-chip"><img class="logo" src="assets/logos/lespagina.webp" alt=""><span>Lespagina · Les 13</span></div></div><div class="mo-werk wijs"><div class="mo-werk-kop">Jouw werk</div><div class="mo-chip"><img class="logo" src="assets/logos/docs.svg" alt=""><span>CO3_Phishing-of-echt</span></div><div class="mo-knop">Inleveren</div></div></div></li>
+<li><p>Klik op <strong>CO3_Phishing-of-echt</strong>. Jouw naam staat in de titel.</p><div class="mock mock-opdracht mini-mock" role="img" aria-label="Tekening van de opdracht. Bij Jouw werk staat het werkdocument CO3 in een rood kader."><div class="mo-midden"><div class="mo-titel"><img class="logo" src="assets/logos/classroom.svg" alt="">Communicatie 3 — Phishing of echt?</div><div class="mo-chip"><img class="logo" src="assets/logos/lespagina.webp" alt=""><span>Lespagina · Les 13</span></div></div><div class="mo-werk"><div class="mo-werk-kop">Jouw werk</div><div class="mo-chip wijs"><img class="logo" src="assets/logos/docs.svg" alt=""><span>CO3_Phishing-of-echt</span></div><div class="mo-knop">Inleveren</div></div></div></li>
+</ol>
+</details></li>
+<li><span class="doe-tekst">Lees het kader bovenaan je werkdocument: wat vraagt Sara, en wat weet Tom al?</span><span class="sub">Je gebruikt het in de kamers.</span></li>
+<li><span class="doe-tekst">Lees het voorbeeld in <strong>deel 1</strong> en bekijk het bericht hieronder.</span><span class="sub">Zo vul je straks elk bericht in. Wijs de knop aan met je muis.</span></li>
+            </ol>
+          </div>
+
+          <div class="tip"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Staat jouw naam niet in de titel?</strong> Dan opende je niet je eigen kopie. Klik in je opdracht rechts, bij <em>Jouw werk</em>.</p></div>
+          <h3 class="kamers-kop">Het voorbeeld: dit deden we samen</h3>
+          <p class="nodig-noot" style="margin-top:.3rem">Wijs de knop aan met je muis: onderaan verschijnt het adres. Er opent niets, het is een tekening.</p>
+          <div class="mail bericht" role="group" aria-label="Het voorbeeld: een mail met de knop Mailbox vergroten"><div class="mail-kop">Inbox van Tom · voorbeeld</div><div class="mail-veld"><span class="mail-lbl">Van</span><span>NovaDepot Helpdesk &lt;helpdesk@novadepot-mail.example&gt;</span></div><div class="mail-veld"><span class="mail-lbl">Onderwerp</span><span>DRINGEND: uw mailbox is vol</span></div><div class="mail-tekst"><p>Beste gebruiker,</p><p>Uw mailbox is 99 % vol. Binnen 24 uur worden uw nieuwe berichten verwijderd. Meld u nu aan om uw mailbox gratis te vergroten.</p><p><span class="lnk knop" role="link" tabindex="0" data-adres="novadepot.mailbox-check.example/login" data-http>Mailbox vergroten</span></p><p>NovaDepot IT</p></div><div class="statusbalk" aria-live="polite"><span class="sb-tekst"></span></div></div>
+        </div>
+        <footer class="card-nav">
+  <button class="btn" type="button" data-goto="start"><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg> Start</button>
+  <button class="btn btn-primary" type="button" data-goto="2">Stap 2 <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
+</footer>
+      </article>
+    </section>
+
+    <!-- ===== STAP 2: kamer 1 en 2 ===== -->
+    <section class="pane" id="pane-2" aria-labelledby="h-2">
+      <article class="card">
+        <header class="card-head">
+          <div class="tags"><span class="tag tag-step">Stap 2</span><span class="tag tag-where"><img class="logo" src="assets/logos/lespagina.webp" alt=""> Lespagina</span><span class="tag tag-where"><img class="logo" src="assets/logos/docs.svg" alt=""> Werkdocument, deel 2</span></div>
+            <h2 id="h-2">Kamer 1 en 2</h2>
+        </header>
+        <div class="card-body">
+          <p class="intro">Lees het bericht samen en los het slot op. Daarna schrijft elk van jullie de antwoorden in het eigen werkdocument.</p>
+          <div class="todo-box">
+            <div class="todo-head"><h3><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg> Wat moet je doen?</h3></div>
+            <ol class="doe">
+<li><span class="doe-tekst">Lees de twee infokaders hieronder.</span><span class="sub">Zo herken je een vals bericht, en waar een link naartoe gaat.</span></li>
+<li><details class="stapjes" open><summary><span class="doe-tekst">Lees het bericht van <strong>kamer 1</strong> samen met je duopartner.</span><span class="stapjes-knop" aria-hidden="true"></span></summary>
+<ol class="klein">
+<li><p>Staat er een link in het bericht? Wijs hem aan met je muis. Onderaan het bericht verschijnt het adres.<span class="sub">Er opent niets: het is een tekening.</span></p><div class="mail bericht tekening mini-mail" role="img" aria-label="Tekening van een mail met een link in een rood kader. Onderaan de mail staat een balk met het adres van de link."><div class="mail-kop">Inbox van Tom</div><div class="mail-tekst"><p>Meld u nu aan: <span class="lnk knop wijs">Mailbox vergroten</span></p></div><div class="statusbalk" aria-live="polite"><span class="sb-tekst" data-adres="novadepot.mailbox-check.example/login" data-http></span></div></div></li>
+</ol>
+</details></li>
+<li><details class="stapjes" open><summary><span class="doe-tekst">Los het <strong>slot</strong> van kamer 1 op: twee vragen.</span><span class="stapjes-knop" aria-hidden="true"></span></summary>
+<ol class="klein">
+<li><p>Klik bij elke vraag op je antwoord. Zit je ernaast? Dan verschijnt een hint. Lees ze samen en probeer opnieuw.</p><div class="sv-teken slot-teken" role="img" aria-label="Tekening van een vraag van het slot. Het eerste antwoord is aangeklikt en staat rood; eronder staat een hint."><p>1. Een vraag van het slot</p><div class="opts"><span class="k hint">Jouw antwoord</span><span class="k ">Een ander antwoord</span></div><p class="terug warn">Nog niet. Hint: een tip, nooit het antwoord.</p></div></li>
+<li><p>Zijn beide antwoorden juist? Dan krijgen jullie een letter, en kamer 2 gaat open.</p><div class="sv-teken slot-teken" role="img" aria-label="Tekening van een groene regel: Slot open, met een leeg vakje voor de letter."><p class="terug ok" style="display:flex;align-items:center;gap:.6rem">Slot open! Jullie letter: <span class="letter" style="width:2.2rem;height:2.4rem;border-style:solid;border-color:#1F7A55"></span></p></div></li>
+</ol>
+</details></li>
+<li><details class="stapjes" open><summary><span class="doe-tekst">Schrijf je antwoorden in je <strong>werkdocument</strong>, in deel 2 bij Bericht 1.</span><span class="stapjes-knop" aria-hidden="true"></span></summary>
+<ol class="klein">
+<li><p>Typ in het lichtblauwe vak naast <strong>Echt of vals?</strong> je antwoord.</p><table class="teken-wd" role="img" aria-label="Tekening van de tabel van Bericht 1 in deel 2. Het lichtblauwe vak naast Echt of vals? staat in een rood kader."><tr><th>Bericht 1</th><th>Antwoord</th></tr><tr><td>Echt of vals?</td><td class="vak breed wijs"></td></tr><tr><td>Welke twee dingen tonen dat?</td><td class="vak breed"></td></tr><tr><td>Wat doet Tom?</td><td class="vak breed"></td></tr></table></li>
+<li><p>Typ in het vak eronder twee dingen die dat tonen.<span class="sub">Kort mag.</span></p><table class="teken-wd" role="img" aria-label="Tekening van de tabel van Bericht 1. Het lichtblauwe vak naast Welke twee dingen tonen dat? staat in een rood kader."><tr><th>Bericht 1</th><th>Antwoord</th></tr><tr><td>Echt of vals?</td><td class="vak breed"></td></tr><tr><td>Welke twee dingen tonen dat?</td><td class="vak breed wijs"></td></tr><tr><td>Wat doet Tom?</td><td class="vak breed"></td></tr></table></li>
+<li><p>Typ in het derde vak wat Tom doet, in één zin.</p><table class="teken-wd" role="img" aria-label="Tekening van de tabel van Bericht 1. Het lichtblauwe vak naast Wat doet Tom? staat in een rood kader."><tr><th>Bericht 1</th><th>Antwoord</th></tr><tr><td>Echt of vals?</td><td class="vak breed"></td></tr><tr><td>Welke twee dingen tonen dat?</td><td class="vak breed"></td></tr><tr><td>Wat doet Tom?</td><td class="vak breed wijs"></td></tr></table></li>
+</ol>
+</details></li>
+<li><span class="doe-tekst">Doe hetzelfde voor <strong>kamer 2</strong> en Bericht 2.</span><span class="sub">Staat er een link in? Wijs hem aan met je muis.</span></li>
+            </ol>
+          </div>
+<div class="info" role="group" aria-labelledby="info-herken">
+  <div class="info-kop"><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg><span class="info-soort">Info</span><h3 id="info-herken">Zo herken je een vals bericht</h3><span class="info-bij">bij de kamers</span></div>
+  <div class="info-body">
+          <p class="info-uitleg">Zeven vragen die je bij elk bericht stelt. Geen enkele bewijst het alleen: kijk naar meer vragen samen.</p>
+          <ol class="herken">
+            <li><span><b>Onverwacht?</b> Je kocht niets, je had lang geen contact.</span></li>
+            <li><span><b>Dringend?</b> Oplichters spelen in op angst. Blijf rustig.</span></li>
+            <li><span><b>Ken je de afzender?</b> Kijk het adres na. Een echt adres is geen garantie.</span></li>
+            <li><span><b>Een vreemde vraag?</b> Om je wachtwoord, bankgegevens of geld.</span></li>
+            <li><span><b>Waar gaat de link echt naartoe?</b> Wijs hem aan met je muis.</span></li>
+            <li><span><b>Word je persoonlijk aangesproken?</b> Of staat er iets vaags?</span></li>
+            <li><span><b>Vraagt het een betaling?</b> Een betaling die je niet verwachtte, of een ander rekeningnummer dan gewoonlijk?</span></li>
+          </ol>
+          <ul style="margin-top:.7rem">
+            <li>Ook een <strong>echt</strong> bericht kan een link hebben. Dan kijk je waar die naartoe gaat.</li>
+            <li>Twijfel je? Kijk het na bij de afzender zelf, op een manier die je al kent: een nummer dat je al hebt, of de echte website. <strong>Niet</strong> via het nummer of de link in het bericht.</li>
+          </ul>
+  </div>
+</div>
+<div class="info" role="group" aria-labelledby="info-link">
+  <div class="info-kop"><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg><span class="info-soort">Info</span><h3 id="info-link">Waar gaat de link naartoe?</h3><span class="info-bij">bij de kamers</span></div>
+  <div class="info-body">
+          <p class="info-uitleg">Wijs een link aan met je muis. Onderaan het bericht verschijnt het echte adres, zoals onderaan een browser. Het woord vlak vóór <strong>.example</strong> en vóór de eerste <strong>/</strong> is de echte website.</p>
+          <div class="adressen" role="img" aria-label="Twee adressen. In www.novadepot.example/planning is het woord novadepot geel gemarkeerd, in www.novadepot.mailbox-check.example/login het woord mailbox-check.">
+            <div class="adres"><span class="url">www.<span class="dom">novadepot</span>.example/planning</span><span class="uitleg">de website is novadepot</span></div>
+            <div class="adres"><span class="url">www.novadepot.<span class="dom">mailbox-check</span>.example/login</span><span class="uitleg">de website is mailbox-check</span></div>
+          </div>
+          <p class="adres-legende">Geel = het woord dat telt. In deze les eindigt elk adres op <strong>.example</strong>: dat is verzonnen. In het echt zie je <em>.be</em> of <em>.com</em>.</p>
+  </div>
+</div>
+
+          <div class="tip"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Zijn jullie het niet eens?</strong> Loop samen de vragen van het infokader af, één voor één.</p></div>
+
+          <h3 class="kamers-kop">De kamers</h3>
+          <div class="letters" data-live><span class="lt-kop">Jullie letters:</span><span class="letter" data-nr="1">?</span><span class="letter" data-nr="2">?</span><span class="letter" data-nr="3">?</span><span class="letter" data-nr="4">?</span></div>
+          <div class="kamers">
+<section class="kamer" id="kamer-1" data-kamer="1" aria-labelledby="kk-1">
+<div class="kamer-kop"><span class="kamer-nr">Kamer 1</span><h3 id="kk-1">Een mail van Kim Wouters</h3><span class="kamer-status"><span class="ks-dicht"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg> Dicht</span><span class="ks-open"><svg class="ic" aria-hidden="true"><use href="#i-hand"/></svg> Open</span><span class="ks-klaar"><svg class="ic" aria-hidden="true"><use href="#i-check-circle"/></svg> Slot open</span></span></div>
+<div class="kamer-open">
+<div class="mail bericht" role="group" aria-label="Bericht 1: een mail van Kim Wouters"><div class="mail-kop">Inbox van Tom · bericht 1</div><div class="mail-veld"><span class="mail-lbl">Van</span><span>Kim Wouters &lt;verkoop@demelkkan.example&gt;</span></div><div class="mail-veld"><span class="mail-lbl">Onderwerp</span><span>RE: Levering bestelling 2026-0418 verplaatsen naar vrijdag 30 oktober</span></div><div class="mail-tekst"><p>Beste meneer Peeters,</p><p>Bedankt voor uw bericht. Vrijdag 30 oktober past, maar pas om 11 uur. Onze chauffeur levert bestelling 2026-0418 dan aan poort 3.</p><p>Met vriendelijke groeten,<br>Kim Wouters<br>Verkoopdienst<br>Zuivelhoeve De Melkkan</p></div></div>
+<div class="slot-box"><p class="slot-kop"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg> Het slot: twee vragen. Allebei juist? Dan krijgen jullie een letter.</p>
+<div class="sv" data-hint="Tom vroeg Kim in les 11 zelf iets. Is dit haar antwoord?"><p>1. Echt of vals?</p><div class="opts rij"><button type="button" data-keuze="echt">Echt</button><button type="button" data-keuze="vals">Vals</button></div><p class="feedback" role="status"></p></div>
+<div class="sv" data-hint="Waarom verwacht Tom dit bericht? Wat klopt er met wat hij al weet?"><p>2. Wat geeft de doorslag?</p><div class="opts"><button type="button" data-keuze="a">Tom vroeg zelf om dit antwoord, en het bestelnummer klopt</button><button type="button" data-keuze="b">Er staan geen emoji’s in</button><button type="button" data-keuze="c">De mail is kort</button></div><p class="feedback" role="status"></p></div>
+</div>
+<p class="kamer-klaar" role="status"><svg class="ic" aria-hidden="true"><use href="#i-check-circle"/></svg><span>Slot open! Jullie letter: <strong class="kl-letter"></strong></span><span class="kl-volgende"></span></p>
+</div>
+</section>
+<section class="kamer" id="kamer-2" data-kamer="2" aria-labelledby="kk-2">
+<div class="kamer-kop"><span class="kamer-nr">Kamer 2</span><h3 id="kk-2">Een sms van een pakjesdienst</h3><span class="kamer-status"><span class="ks-dicht"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg> Dicht</span><span class="ks-open"><svg class="ic" aria-hidden="true"><use href="#i-hand"/></svg> Open</span><span class="ks-klaar"><svg class="ic" aria-hidden="true"><use href="#i-check-circle"/></svg> Slot open</span></span></div>
+<p class="kamer-dicht"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg><span>Deze kamer is dicht. Los eerst het slot van kamer 1 op.</span></p>
+<div class="kamer-open">
+<div class="mail bericht sms" role="group" aria-label="Bericht 2: een sms van een pakjesdienst"><div class="mail-kop">Berichten · sms</div><div class="mail-veld"><span class="mail-lbl">Van</span><span>+44 7700 900123</span></div><div class="sms-bel"><p>PakjeSnel: uw pakket kon niet geleverd worden. Betaal binnen 12 uur 1,99 EUR verzendkosten, anders gaat het terug: <span class="lnk" role="link" tabindex="0" data-adres="pakjesnel.levering-betalen.example/tom">pakjesnel.levering-betalen.example/tom</span></p></div><div class="statusbalk" aria-live="polite"><span class="sb-tekst"></span></div></div>
+<div class="slot-box"><p class="slot-kop"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg> Het slot: twee vragen. Allebei juist? Dan krijgen jullie een letter.</p>
+<div class="sv" data-hint="Tom bestelde niets. Wat vraagt de sms van hem, en hoeveel tijd krijgt hij?"><p>1. Echt of vals?</p><div class="opts rij"><button type="button" data-keuze="echt">Echt</button><button type="button" data-keuze="vals">Vals</button></div><p class="feedback" role="status"></p></div>
+<div class="sv" data-hint="Wijs de link aan met je muis: welk woord staat vlak vóór .example?"><p>2. Naar welke website leidt de link?</p><div class="opts rij"><button type="button" data-keuze="a">pakjesnel</button><button type="button" data-keuze="b">levering-betalen</button><button type="button" data-keuze="c">tom</button></div><p class="feedback" role="status"></p></div>
+</div>
+<p class="kamer-klaar" role="status"><svg class="ic" aria-hidden="true"><use href="#i-check-circle"/></svg><span>Slot open! Jullie letter: <strong class="kl-letter"></strong></span><span class="kl-volgende"></span></p>
+</div>
+</section>
+          </div>
+        </div>
+        <footer class="card-nav">
+  <button class="btn" type="button" data-goto="1"><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg> Stap 1</button>
+  <button class="btn btn-primary" type="button" data-goto="3">Stap 3 <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
+</footer>
+      </article>
+    </section>
+
+    <!-- ===== STAP 3: kamer 3 en 4 ===== -->
+    <section class="pane" id="pane-3" aria-labelledby="h-3">
+      <article class="card">
+        <header class="card-head">
+          <div class="tags"><span class="tag tag-step">Stap 3</span><span class="tag tag-where"><img class="logo" src="assets/logos/lespagina.webp" alt=""> Lespagina</span><span class="tag tag-where"><img class="logo" src="assets/logos/docs.svg" alt=""> Werkdocument, deel 3</span></div>
+            <h2 id="h-3">Kamer 3 en 4</h2>
+        </header>
+        <div class="card-body">
+          <p class="intro">Dezelfde aanpak als in stap 2, voor de laatste twee kamers. Is kamer 3 nog dicht? Los dan eerst het slot van kamer 2 op.</p>
+          <div class="todo-box">
+            <div class="todo-head"><h3><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg> Wat moet je doen?</h3></div>
+            <ol class="doe">
+<li><span class="doe-tekst">Lees in het kader van je werkdocument wat Tom al weet.</span><span class="sub">Over De Bonenbaas, en over Lotte.</span></li>
+<li><span class="doe-tekst">Lees het bericht van <strong>kamer 3</strong> samen. Los het slot op.</span><span class="sub">Zit je ernaast? Lees de hint en probeer opnieuw.</span></li>
+<li><details class="stapjes" open><summary><span class="doe-tekst">Schrijf je antwoorden bij Bericht 3 in <strong>deel 3</strong> van je werkdocument.</span><span class="stapjes-knop" aria-hidden="true"></span></summary>
+<ol class="klein">
+<li><p>Typ in de drie lichtblauwe vakken: echt of vals, twee dingen die dat tonen, en wat Tom doet.</p><table class="teken-wd" role="img" aria-label="Tekening van de tabel van Bericht 3 in deel 3. De drie lichtblauwe vakken staan in een rood kader."><tr><th>Bericht 3</th><th>Antwoord</th></tr><tr><td>Echt of vals?</td><td class="vak breed wijs"></td></tr><tr><td>Welke twee dingen tonen dat?</td><td class="vak breed wijs"></td></tr><tr><td>Wat doet Tom?</td><td class="vak breed wijs"></td></tr></table></li>
+</ol>
+</details></li>
+<li><span class="doe-tekst">Doe hetzelfde voor <strong>kamer 4</strong> en Bericht 4.</span><span class="sub">Staat er een link in? Wijs hem aan met je muis.</span></li>
+            </ol>
+          </div>
+
+          <div class="tip"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Is alles vals?</strong> Nee. Een bericht dat Tom verwachtte, van een adres dat hij kent, zonder vreemde vraag, kan echt zijn.</p></div>
+
+          <h3 class="kamers-kop">De kamers</h3>
+          <div class="letters" data-live><span class="lt-kop">Jullie letters:</span><span class="letter" data-nr="1">?</span><span class="letter" data-nr="2">?</span><span class="letter" data-nr="3">?</span><span class="letter" data-nr="4">?</span></div>
+          <div class="kamers">
+<section class="kamer" id="kamer-3" data-kamer="3" aria-labelledby="kk-3">
+<div class="kamer-kop"><span class="kamer-nr">Kamer 3</span><h3 id="kk-3">Een mail van Koffiebranderij De Bonenbaas</h3><span class="kamer-status"><span class="ks-dicht"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg> Dicht</span><span class="ks-open"><svg class="ic" aria-hidden="true"><use href="#i-hand"/></svg> Open</span><span class="ks-klaar"><svg class="ic" aria-hidden="true"><use href="#i-check-circle"/></svg> Slot open</span></span></div>
+<p class="kamer-dicht"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg><span>Deze kamer is dicht. Los eerst het slot van kamer 2 op (stap 2).</span></p>
+<div class="kamer-open">
+<div class="mail bericht" role="group" aria-label="Bericht 3: een mail van Koffiebranderij De Bonenbaas"><div class="mail-kop">Inbox van Tom · bericht 3</div><div class="mail-veld"><span class="mail-lbl">Van</span><span>Koffiebranderij De Bonenbaas &lt;facturatie@bonenbaas-betaling.example&gt;</span></div><div class="mail-veld"><span class="mail-lbl">Onderwerp</span><span>Nieuw rekeningnummer - factuur 2026-311</span></div><div class="mail-tekst"><p>Geachte klant,</p><p>Wegens een wijziging bij onze bank is ons rekeningnummer veranderd. Betaal factuur 2026-311 (486,20 euro) vandaag nog op ons nieuwe rekeningnummer LT00 1234 5678 9012 3456.</p><p>Betaalt u niet vandaag, dan stoppen wij uw leveringen.</p></div></div>
+<div class="slot-box"><p class="slot-kop"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg> Het slot: twee vragen. Allebei juist? Dan krijgen jullie een letter.</p>
+<div class="sv" data-hint="Vergelijk het adres met wat Tom al weet over De Bonenbaas."><p>1. Echt of vals?</p><div class="opts rij"><button type="button" data-keuze="echt">Echt</button><button type="button" data-keuze="vals">Vals</button></div><p class="feedback" role="status"></p></div>
+<div class="sv" data-hint="Met wie praat Tom als hij op de mail antwoordt? Wie kent hij echt?"><p>2. Wat doet Tom eerst?</p><div class="opts"><button type="button" data-keuze="a">Meteen betalen, anders stoppen de leveringen</button><button type="button" data-keuze="b">Antwoorden op de mail en vragen of het klopt</button><button type="button" data-keuze="c">De Bonenbaas bellen op het nummer dat hij al kent</button></div><p class="feedback" role="status"></p></div>
+</div>
+<p class="kamer-klaar" role="status"><svg class="ic" aria-hidden="true"><use href="#i-check-circle"/></svg><span>Slot open! Jullie letter: <strong class="kl-letter"></strong></span><span class="kl-volgende"></span></p>
+</div>
+</section>
+<section class="kamer" id="kamer-4" data-kamer="4" aria-labelledby="kk-4">
+<div class="kamer-kop"><span class="kamer-nr">Kamer 4</span><h3 id="kk-4">Een mail van Lotte Maes</h3><span class="kamer-status"><span class="ks-dicht"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg> Dicht</span><span class="ks-open"><svg class="ic" aria-hidden="true"><use href="#i-hand"/></svg> Open</span><span class="ks-klaar"><svg class="ic" aria-hidden="true"><use href="#i-check-circle"/></svg> Slot open</span></span></div>
+<p class="kamer-dicht"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg><span>Deze kamer is dicht. Los eerst het slot van kamer 3 op.</span></p>
+<div class="kamer-open">
+<div class="mail bericht" role="group" aria-label="Bericht 4: een mail van Lotte Maes"><div class="mail-kop">Inbox van Tom · bericht 4</div><div class="mail-veld"><span class="mail-lbl">Van</span><span>Lotte Maes &lt;lotte.maes@novadepot.example&gt;</span></div><div class="mail-veld"><span class="mail-lbl">Onderwerp</span><span>Planning jobstudenten 21–24 december</span></div><div class="mail-tekst"><p>Dag Tom,</p><p>Zoals ik gisteren aan de telefoon zei: de planning van de jobstudenten staat klaar. Je vindt ze hier: <span class="lnk" role="link" tabindex="0" data-adres="www.novadepot.example/personeel/planning">www.novadepot.example/personeel/planning</span></p><p>Kijk je na of de ploegen kloppen? Bedankt!</p><p>Lotte · Personeelsdienst · toestel 205</p></div><div class="statusbalk" aria-live="polite"><span class="sb-tekst"></span></div></div>
+<div class="slot-box"><p class="slot-kop"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg> Het slot: twee vragen. Allebei juist? Dan krijgen jullie een letter.</p>
+<div class="sv" data-hint="Wijs de link van Lotte aan met je muis. Wat verwachtte Tom van haar?"><p>1. Echt of vals?</p><div class="opts rij"><button type="button" data-keuze="echt">Echt</button><button type="button" data-keuze="vals">Vals</button></div><p class="feedback" role="status"></p></div>
+<div class="sv" data-hint="Wijs de link aan met je muis: welk woord staat vlak vóór .example en vóór de eerste /?"><p>2. Naar welke website leidt de link?</p><div class="opts rij"><button type="button" data-keuze="a">personeel</button><button type="button" data-keuze="b">novadepot</button><button type="button" data-keuze="c">planning</button></div><p class="feedback" role="status"></p></div>
+</div>
+<p class="kamer-klaar" role="status"><svg class="ic" aria-hidden="true"><use href="#i-check-circle"/></svg><span>Slot open! Jullie letter: <strong class="kl-letter"></strong></span><span class="kl-volgende"></span></p>
+</div>
+</section>
+          </div>
+        </div>
+        <footer class="card-nav">
+  <button class="btn" type="button" data-goto="2"><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg> Stap 2</button>
+  <button class="btn btn-primary" type="button" data-goto="4">Stap 4 <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
+</footer>
+      </article>
+    </section>
+
+    <!-- ===== STAP 4: ontsnapt ===== -->
+    <section class="pane" id="pane-4" aria-labelledby="h-4">
+      <article class="card">
+        <header class="card-head">
+          <div class="tags"><span class="tag tag-step">Stap 4</span><span class="tag tag-where"><img class="logo" src="assets/logos/lespagina.webp" alt=""> Lespagina</span><span class="tag tag-where"><img class="logo" src="assets/logos/docs.svg" alt=""> Werkdocument, deel 4</span></div>
+            <h2 id="h-4">Ontsnapt!</h2>
+        </header>
+        <div class="card-body">
+          <p class="intro">Zijn alle sloten open? Dan vormen de vier letters het codewoord. Daarna vraagt Sara nog twee dingen.</p>
+          <div class="letters" data-live><span class="lt-kop">Jullie letters:</span><span class="letter" data-nr="1">?</span><span class="letter" data-nr="2">?</span><span class="letter" data-nr="3">?</span><span class="letter" data-nr="4">?</span></div>
+          <p class="slot" aria-live="polite" data-sloten><svg class="ic ic-dicht" aria-hidden="true"><use href="#i-lock"/></svg><svg class="ic ic-open" aria-hidden="true"><use href="#i-check-circle"/></svg><span class="slot-tekst">Nog 4 sloten te openen. Doe eerst de kamers in stap 2 en 3. Dan zie je hier wat je nog moet doen.</span></p>
+          <div class="na-sloten">
+          <div class="todo-box">
+            <div class="todo-head"><h3><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg> Wat moet je doen?</h3></div>
+            <ol class="doe">
+<li><details class="stapjes" open><summary><span class="doe-tekst">Typ het <strong>codewoord</strong> in je werkdocument.</span><span class="stapjes-knop" aria-hidden="true"></span></summary>
+<ol class="klein">
+<li><p>Zet de vier letters in volgorde. Scroll in je werkdocument naar <strong>Deel 4 — Ontsnapt!</strong> en typ het codewoord in het vak bovenaan.</p><table class="teken-wd" role="img" aria-label="Tekening van deel 4 in het werkdocument. Onder de vraag naar het codewoord staat het lichtblauwe vak in een rood kader."><tr><th>Deel 4 — Ontsnapt!</th></tr><tr><td>Het codewoord van de escaperoom:</td></tr><tr><td class="vak breed wijs"></td></tr></table></li>
+</ol>
+</details></li>
+<li><span class="doe-tekst">Lees het infokader <strong>Je klikte toch?</strong> hieronder.</span><span class="sub">Dat hoort bij vraag a.</span></li>
+<li><details class="stapjes" open><summary><span class="doe-tekst">Beantwoord <strong>vraag a</strong> in je werkdocument.</span><span class="stapjes-knop" aria-hidden="true"></span></summary>
+<ol class="klein">
+<li><p>Typ in het lichtblauwe vak drie dingen die Tom doet.<span class="sub">Kort mag.</span></p><table class="teken-wd" role="img" aria-label="Tekening van vraag a in deel 4. Het grote lichtblauwe vak onder de vraag staat in een rood kader."><tr><th>Deel 4 — Ontsnapt!</th></tr><tr><td>a. Wat doet Tom nu? Noem drie dingen.</td></tr><tr><td class="vak breed wijs" style="height:56px"></td></tr></table></li>
+</ol>
+</details></li>
+<li><span class="doe-tekst">Lees het infokader <strong>Waar meld je een vals bericht?</strong> en beantwoord <strong>vraag b</strong>.</span><span class="sub">Typ het adres letter voor letter in het vak.</span></li>
+            </ol>
+          </div>
+<div class="info" role="group" aria-labelledby="info-klikte">
+  <div class="info-kop"><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg><span class="info-soort">Info</span><h3 id="info-klikte">Je klikte toch?</h3><span class="info-bij">bij vraag a</span></div>
+  <div class="info-body">
+          <p class="info-uitleg">Het kan iedereen overkomen, ook aan Tom. Denk na over deze vragen:</p>
+          <ul>
+            <li>Wat zei Safeonweb in les 09 over een gehackt account?</li>
+            <li>Gebruikt Tom zijn wachtwoord ook ergens anders?</li>
+            <li>Wie op het werk moet weten dat Tom op een vals bericht klikte?</li>
+            <li>Worden er nu misschien rare berichten in Toms naam verstuurd? Wie wil dat weten?</li>
+          </ul>
+  </div>
+</div>
+<div class="info" role="group" aria-labelledby="info-melden">
+  <div class="info-kop"><svg class="ic" aria-hidden="true"><use href="#i-info"/></svg><span class="info-soort">Info</span><h3 id="info-melden">Waar meld je een vals bericht?</h3><span class="info-bij">bij vraag b</span></div>
+  <div class="info-body">
+          <p class="info-uitleg">Safeonweb is de dienst van de overheid die helpt bij online veiligheid. Zij onderzoeken valse berichten.</p>
+          <ul>
+            <li>Een verdachte <strong>mail</strong> stuur je door naar <strong>verdacht@safeonweb.be</strong>.</li>
+            <li>Een verdachte <strong>sms</strong>: maak een schermafbeelding en stuur die naar hetzelfde adres.</li>
+            <li>Klik niet op de link en open geen bijlage.</li>
+            <li>Op het werk meld je het ook aan de preventiedienst (bij NovaDepot is dat Sara Claes).</li>
+          </ul>
+  </div>
+</div>
+
+          <div class="tip"><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg><p><strong>Weet je niet meer wat Safeonweb in les 09 zei?</strong> Kijk op de theoriekaart bij <em>Je klikte toch?</em></p></div>
+
+          </div>
+        </div>
+        <footer class="card-nav">
+  <button class="btn" type="button" data-goto="3"><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg> Stap 3</button>
+  <button class="btn btn-primary" type="button" data-goto="5">Stap 5 <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
+</footer>
+      </article>
+    </section>
+
+    <!-- ===== STAP 5 ===== -->
+    <section class="pane" id="pane-5" aria-labelledby="h-5">
+      <article class="card">
+        <header class="card-head met-mascotte">
+          <div>
+            <div class="tags"><span class="tag tag-step">Stap 5</span><span class="tag tag-where"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Opdracht</span><span class="tag tag-where"><img class="logo" src="assets/logos/docs.svg" alt=""> Werkdocument, deel 4</span></div>
+            <h2 id="h-5">Nalezen en inleveren</h2>
+          </div>
+          <img class="mascotte-kop" src="assets/mascotte/dalton_inleveren.webp" alt="" width="120" height="120">
+        </header>
+        <div class="card-body">
+          <p class="intro">Lees je werkdocument na en lever in. Elk van jullie levert het eigen werkdocument in.</p>
+          <div class="todo-box">
+            <div class="todo-head"><h3><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg> Wat moet je doen?</h3></div>
+            <ol class="doe">
+<li><span class="doe-tekst">Lees je antwoorden na, bericht per bericht.</span><span class="sub">Staat bij elk bericht echt of vals, twee dingen en één zin?</span></li>
+<li><span class="doe-tekst">Loop de <strong>controletabel</strong> onderaan deel 4 na.</span><span class="sub">Typ een x bij wat klopt. Staat er iets open? Werk het eerst af.</span></li>
+<li><details class="stapjes" open><summary><span class="doe-tekst">Lever in.</span><span class="stapjes-knop" aria-hidden="true"></span></summary>
+<ol class="klein">
+<li><p>Klik in je opdracht in <strong class="met-logo"><img class="logo" src="assets/logos/classroom.svg" alt="">Google Classroom</strong> rechts op <span class="ui">Inleveren</span>.</p><div class="mock mock-opdracht mini-mock" role="img" aria-label="Tekening van de opdracht. Bij Jouw werk staat de knop Inleveren in een rood kader."><div class="mo-midden"><div class="mo-titel"><img class="logo" src="assets/logos/classroom.svg" alt="">Communicatie 3 — Phishing of echt?</div><div class="mo-chip"><img class="logo" src="assets/logos/lespagina.webp" alt=""><span>Lespagina · Les 13</span></div></div><div class="mo-werk"><div class="mo-werk-kop">Jouw werk</div><div class="mo-chip"><img class="logo" src="assets/logos/docs.svg" alt=""><span>CO3_Phishing-of-echt</span></div><div class="mo-knop wijs">Inleveren</div></div></div></li>
+<li><p>Klik in het venster <em>Je werk inleveren?</em> nog eens op <span class="ui">Inleveren</span>.<span class="sub">Daarna staat er rechts <em>Ingeleverd</em>. Ook je duopartner levert zelf in.</span></p></li>
+</ol>
+</details></li>
+            </ol>
+<figure class="clip"><video src="assets/video/inleveren.mp4" poster="assets/video/inleveren.jpg" autoplay loop muted playsinline controls preload="metadata" aria-label="Filmpje: rechts, bij Jouw werk, op Inleveren klikken; in het venster Je werk inleveren? nog eens op Inleveren klikken; daarna staat er Ingeleverd."></video><figcaption>Filmpje van 10 seconden: zo lever je in. Het is een andere opdracht, de knoppen zijn dezelfde.</figcaption></figure>          </div>
+
+        </div>
+        <footer class="card-nav">
+  <button class="btn" type="button" data-goto="4"><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg> Stap 4</button>
+  <button class="btn btn-primary" type="button" data-goto="extra">Extra <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
+</footer>
+      </article>
+    </section>
+
+    <!-- ===== EXTRA ===== -->
+    <section class="pane" id="pane-extra" aria-labelledby="h-extra">
+      <article class="card">
+        <header class="card-head">
+          <div class="tags"><span class="tag tag-extra">Extra · niet verplicht</span></div>
+          <h2 id="h-extra">Voor wie klaar is</h2>
+        </header>
+        <div class="card-body">
+          <p class="intro">Begin hier pas nadat je hebt ingeleverd. Dit telt niet mee.</p>
+          <div class="todo-box">
+            <h3><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg> Wat kan je doen?</h3>
+            <ol class="todo">
+              <li><strong>Schrijf drie tips voor de collega’s van NovaDepot.</strong> Hoe herkennen ze een vals bericht? Typ ze in je werkdocument, onder <em>Extra</em>, elk in één zin.</li>
+              <li><strong>Wil je dat je leraar je tips leest?</strong> Klik in je opdracht rechts op <span class="ui">Ongedaan maken</span> en daarna weer op <span class="ui">Inleveren</span>.</li>
+            </ol>
+          </div>
+          <div class="tip warn"><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg><p><strong>Klik je op Ongedaan maken?</strong> Klik daarna weer op Inleveren. Anders is je werk niet ingeleverd.</p></div>
+
+        </div>
+        <footer class="card-nav">
+          <button class="btn" type="button" data-goto="5"><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg> Stap 5</button>
+          <button class="btn" type="button" data-goto="start">Naar het begin</button>
+        </footer>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- ============ RECHTS: de checklist ============ -->
+  <aside class="checklist leeg" id="checklist" aria-labelledby="h-cl">
+    <div class="cl-head">
+      <h2 id="h-cl">Checklist</h2>
+      <div class="cl-bar" role="progressbar" aria-label="Voortgang" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="cl-fill" id="clFill"></div></div>
+      <p class="cl-count" id="clCount">0 van 0 klaar</p>
+    </div>
+    <div class="cl-body">
+      <div class="cl-group" data-step="1"><h3>1 · Klaarzetten</h3>
+        <label class="cl-item"><input type="checkbox" id="c1a"><span>Naast mijn duopartner, werkdocument open met mijn naam in de titel</span></label>
+        <label class="cl-item"><input type="checkbox" id="c1b"><span>Kader en voorbeeld (deel 1) gelezen</span></label>
+      </div>
+      <div class="cl-group" data-step="2"><h3>2 · Kamer 1 en 2</h3>
+        <label class="cl-item"><input type="checkbox" id="c2a"><span>Infokaders gelezen</span></label>
+        <label class="cl-item"><input type="checkbox" id="c2b"><span>Slot van kamer 1 open</span></label>
+        <label class="cl-item"><input type="checkbox" id="c2c"><span>Slot van kamer 2 open</span></label>
+        <label class="cl-item"><input type="checkbox" id="c2d"><span>Bericht 1 en 2 ingevuld in deel 2</span></label>
+      </div>
+      <div class="cl-group" data-step="3"><h3>3 · Kamer 3 en 4</h3>
+        <label class="cl-item"><input type="checkbox" id="c3a"><span>Slot van kamer 3 open</span></label>
+        <label class="cl-item"><input type="checkbox" id="c3b"><span>Slot van kamer 4 open</span></label>
+        <label class="cl-item"><input type="checkbox" id="c3c"><span>Bericht 3 en 4 ingevuld in deel 3</span></label>
+      </div>
+      <div class="cl-group" data-step="4"><h3>4 · Ontsnapt!</h3>
+        <label class="cl-item"><input type="checkbox" id="c4a"><span>Codewoord getypt in deel 4</span></label>
+        <label class="cl-item"><input type="checkbox" id="c4b"><span>Vraag a: drie dingen na een klik</span></label>
+        <label class="cl-item"><input type="checkbox" id="c4c"><span>Vraag b: het adres om door te sturen</span></label>
+      </div>
+      <div class="cl-group" data-step="5"><h3>5 · Nalezen en inleveren</h3>
+        <label class="cl-item"><input type="checkbox" id="c5a"><span>Antwoorden en controletabel nagelezen</span></label>
+        <label class="cl-item"><input type="checkbox" id="c5b"><span>Werkdocument ingeleverd</span></label>
+      </div>
+    </div>
+    <div class="cl-foot">
+      <button class="btn cl-toggle" type="button" id="clToggle" aria-expanded="false">Toon alles</button>
+      <button class="btn" type="button" id="btnReset">Vinkjes wissen</button>
+      <p class="cl-note">Je vinkjes en geopende sloten staan alleen op deze computer. Er wordt niets doorgestuurd.</p>
+    </div>
+  </aside>
+</div>
+
+<!-- ============ Klaar! ============ -->
+<div class="klaar-overlay" id="klaar" role="dialog" aria-modal="true" aria-labelledby="h-klaar" hidden>
+  <div class="klaar-card">
+    <img class="mascotte-klaar" src="assets/mascotte/dalton_succes.webp" alt="" width="150" height="150">
+    <h2 id="h-klaar">Tom is veilig!</h2>
+    <p>Alles is afgevinkt. Heb je nog tijd? Kijk dan bij <strong>Extra</strong>.</p>
+    <p>Vertrek je? <strong>Log uit</strong>, of druk op <span class="key">Windows</span> + <span class="key">L</span>.</p>
+    <button class="btn btn-primary" type="button" id="klaarSluit">Sluiten</button>
+  </div>
+</div>
+
+<footer class="site">
+  Toegepaste Informatica · GO! Dalton Gent · 2de graad Organisatie en logistiek · NovaDepot is een fictief bedrijf. Alle namen, nummers, rekeningnummers en adressen zijn verzonnen, en de berichten zijn tekeningen: er is geen echte link.
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
