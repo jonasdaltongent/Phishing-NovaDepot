@@ -26,7 +26,7 @@ Sara Claes (preventiedienst) heeft gemerkt dat er valse berichten rondgaan bij N
 zijn inbox. Het duo is haar veiligheidsteam: per bericht zeggen ze echt of vals, noemen ze twee dingen die dat tonen en zeggen ze wat Tom
 doet. Op de lespagina gaat elke kamer pas open als het slot van de vorige juist is; elk slot geeft een letter van het codewoord (**HAAK**).
 Niemand klikt op een echte link: de berichten zijn tekeningen. Opbouw en bronnen: `lesvoorbereiding.md`; de uitleg komt uit
-`_vakinhoud/phishing-en-oplichting.md` (nieuw, 21-10-2026: één keer goed te keuren door Jonas).
+`_vakinhoud/phishing-en-oplichting.md` (nieuw, goedgekeurd door Jonas op 21-10-2026).
 
 ---
 
