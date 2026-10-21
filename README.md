@@ -107,7 +107,7 @@ Repository `jonasdaltongent/Phishing-NovaDepot`, Pages op `main`, map `/ (root)`
 
 `classroom.json`: **Communicatie 3 — Phishing of echt?**, onderwerp *Digitale competenties*, 3ORLO, 4ORLOa en 4ORLOb, 20 punten,
 deadline vrijdag 30 oktober 2026, 20.00 uur. Bijlagen: de link naar de lespagina en `CO3_Phishing-of-echt` (**Een kopie maken voor
-elke leerling**). Geen zip. __CLASSROOM__
+elke leerling**). Geen zip. Als **concept** klaargezet op 21-10-2026 en teruggelezen (`DRAFT`, zonder tijdstip, deadline vr 30-10 20.00 uur, 20 punten, het werkdocument als `STUDENT_COPY`) in 3ORLO, 4ORLOa en 4ORLOb. **Nog niet ingepland**: de hoofdsessie doet dat na het nakijken.
 
 Instructietekst:
 
