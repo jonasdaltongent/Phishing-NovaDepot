@@ -16,10 +16,10 @@
 **Lesduur:** 1 × 50 minuten: 10 minuten instructie + 40 minuten keuzewerktijd
 **Context:** NovaDepot, *de inbox van Tom* — module 3 van het jaarplan, les 13 (reeks *Communicatie 3*)
 **Toestel:** **lokaal 18, Windows 11** — alles in Chrome, een muis om een link aan te wijzen, geen bestanden
-**Lesdag:** 3ORLO wo 28 oktober (2de uur) · 4ORLOb wo 28 oktober (3de uur) · 4ORLOa do 29 oktober (7de uur)
+**Lesdag:** 4ORLOb di 10 november (8ste uur) · 3ORLO di 10 november (9de uur) · 4ORLOa do 12 november (7de uur). Eerst gepland op 28–29 oktober; toen niet gegeven, dus verschoven (Jonas, 06-11-2026)
 **Werkvorm:** escaperoom **in duo** (stap 2–4); elke leerling vult en levert het **eigen** werkdocument in
 **Kernleerplandoel:** `BV2_04.04` (toepassen) · ondersteunend `BV2_02.04`, `BV2_04.01` · contextueel `BV2_05.01`
-**Deadline:** vrijdag 30 oktober 2026, 20.00 uur · 20 punten
+**Deadline:** vrijdag 13 november 2026, 20.00 uur · 20 punten
 **Pages:** https://jonasdaltongent.github.io/Phishing-NovaDepot/ · dia's: …/presentatie.html · repository: `jonasdaltongent/Phishing-NovaDepot`
 
 Sara Claes (preventiedienst) heeft gemerkt dat er valse berichten rondgaan bij NovaDepot. Tom Peeters twijfelt over vier berichten in
@@ -87,7 +87,9 @@ handeling (de les begint in *Kort*, zonder knop), rechts de **checklist** met 14
   letter verschijnt en kamer n+1 gaat open. Kamer 1 is altijd open; kamer 3 gaat pas open na kamer 2 (in stap 2).
 - `localStorage` (`novadepot_phishing_v1_sloten`) onthoudt de opgeloste kamers, zodat een herladen pagina het werk niet wist. Een andere
   computer of een ander profiel begint opnieuw (dan lost de leerling de kamers opnieuw op: ze zijn in een paar minuten gedaan).
-- Zijn alle vier de sloten open, dan toont stap 4 de letters (**H A A K**) en gaat het blok open. `?leraar` achter het adres zet alle
+- Zijn alle vier de sloten open, dan toont stap 4 de letters (**H A A K**) en het **laatste slot**: een vak waarin het duo het codewoord typt
+  (`[data-codeslot]`, sinds 06-11-2026: Jonas kon "niets intypen bij de codes"). Pas als het juist is (hoofdletters maken niet uit), gaat
+  het blok open; `localStorage` onthoudt het (`…_code`). Het woord staat niet in de HTML: het script plakt de letters uit `SLOTEN` aan elkaar. `?leraar` achter het adres zet alle
   kamers en het blok van stap 4 open en onthoudt niets.
 - De **links in de berichten** zijn geen echte links: een `<span role="link" tabindex="0">` zonder `href`. Zweven, focus of klik toont
   onderaan het bericht het adres (de statusbalk, `.statusbalk`), zoals een browser. De adressen staan zonder `https://` in de HTML
@@ -106,7 +108,7 @@ Repository `jonasdaltongent/Phishing-NovaDepot`, Pages op `main`, map `/ (root)`
 ### Stap 2 — De opdracht in Classroom, met de koppeling
 
 `classroom.json`: **Communicatie 3 — Phishing of echt?**, onderwerp *Digitale competenties*, 3ORLO, 4ORLOa en 4ORLOb, 20 punten,
-deadline vrijdag 30 oktober 2026, 20.00 uur. Bijlagen: de link naar de lespagina en `CO3_Phishing-of-echt` (**Een kopie maken voor
+deadline vrijdag 13 november 2026, 20.00 uur. Bijlagen: de link naar de lespagina en `CO3_Phishing-of-echt` (**Een kopie maken voor
 elke leerling**). Geen zip. Als **concept** klaargezet op 21-10-2026 en teruggelezen (`DRAFT`, zonder tijdstip, deadline vr 30-10 20.00 uur, 20 punten, het werkdocument als `STUDENT_COPY`) in 3ORLO, 4ORLOa en 4ORLOb. **Nog niet ingepland**: de hoofdsessie doet dat na het nakijken.
 
 Instructietekst:
@@ -114,10 +116,10 @@ Instructietekst:
 ```text
 1. Open de lespagina (link) en je werkdocument CO3_Phishing-of-echt.
 2. Je werkt samen met je buur, maar je schrijft alles in je eigen werkdocument.
-3. Klik op Inleveren, ten laatste vrijdag 30 oktober 2026 om 20.00 uur.
+3. Klik op Inleveren, ten laatste vrijdag 13 november 2026 om 20.00 uur.
 ```
 
-Inplannen (door de hoofdsessie, na het nakijken): een half uur vóór elke les: wo 28-10 om 8.45 (3ORLO) en 9.55 (4ORLOb), do 29-10 om 13.15 (4ORLOa).
+Inplannen: een half uur vóór elke les: di 10-11 om 14.05 (4ORLOb) en 14.55 (3ORLO), do 12-11 om 13.15 (4ORLOa).
 
 ### Stap 3 — Met de hand, als de koppeling niet werkt
 

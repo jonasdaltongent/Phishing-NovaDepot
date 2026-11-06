@@ -818,6 +818,20 @@ body:not(.js) .kamer-open { display: block; }
 /* stap 4: pas open als de vier sloten juist zijn */
 body.js .na-sloten:not(.open) { display: none; }
 
+/* stap 4: het laatste slot, een vak waarin het duo het codewoord typt (06-11-2026); alleen zichtbaar als de vier sloten open zijn */
+.codeslot { display: none; }
+body.js .codeslot.open { display: block; margin: 0 0 1.2rem; padding: 1rem; border: 2px solid var(--peri); border-radius: var(--radius-sm); background: #fff; }
+.codeslot label { display: flex; align-items: center; gap: .5rem; font-weight: 700; color: var(--navy-deep); margin: 0 0 .6rem; }
+.codeslot label .ic { width: 1.2rem; height: 1.2rem; }
+.codeslot .cs-rij { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+.codeslot input { width: 10rem; max-width: 100%; height: 2.9rem; padding: 0 .8rem; font-family: var(--head); font-weight: 900; font-size: 1.4rem; letter-spacing: .25em; text-transform: uppercase; color: var(--navy-deep); border: 2px solid var(--peri); border-radius: 8px; background: var(--peri-soft); }
+.codeslot input:focus { outline: 3px solid var(--navy-deep); outline-offset: 2px; }
+.codeslot .cs-knop { height: 2.9rem; padding: 0 1.1rem; font: inherit; font-weight: 700; color: #fff; background: var(--navy-deep); border: 0; border-radius: 8px; cursor: pointer; }
+.codeslot .feedback { margin: .5rem 0 0; min-height: 1.2em; }
+.codeslot.fout input { border-color: #C5221F; animation: schud .3s; }
+@keyframes schud { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+@media (prefers-reduced-motion: reduce) { .codeslot.fout input { animation: none; } }
+
 /* tekening: de inbox van Tom met vier kamers en vier sloten (startpagina en dia 4); verklapt niets */
 .inbox { max-width: 440px; margin: .8rem 0 .6rem; border: 1px solid #C4C7C5; border-radius: 10px 10px 6px 6px; overflow: hidden; background: #fff; font-family: Arial, Helvetica, sans-serif; font-size: .95rem; color: #202124; box-shadow: 0 4px 14px rgba(29, 35, 64, .1); }
 .ib-kop { background: #F2F6FC; font-weight: 700; font-size: .9rem; padding: .45rem .9rem; }

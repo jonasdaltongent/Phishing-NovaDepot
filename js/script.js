@@ -160,6 +160,9 @@
       store('vinkjes', []);
       opgelost = [];
       store('sloten', []);
+      codeOk = false;
+      store('code', false);
+      all('[data-codeslot]').forEach(function (cs) { cs.querySelector('input').value = ''; cs.querySelector('.feedback').textContent = ''; });
       all('.sv').forEach(function (sv) {
         sv.classList.remove('juist');
         all('button', sv).forEach(function (b) { b.classList.remove('right', 'wrong'); });
@@ -213,6 +216,7 @@
   var AANTAL_SLOTEN = 4;
   var kamers = all('.kamer');
   var opgelost = load('sloten', []);
+  var codeOk = load('code', false) === true;   // het laatste slot: het codewoord getypt (stap 4)
   if (!Array.isArray(opgelost)) opgelost = [];
   opgelost = opgelost.filter(function (n) { return SLOTEN[n]; });
 
@@ -246,12 +250,15 @@
       l.classList.toggle('vol', isOpgelost(n));
     });
     var alle = opgelost.length === AANTAL_SLOTEN;
-    all('.na-sloten').forEach(function (blok) { blok.classList.toggle('open', alle || teacherMode); });
+    var ontsnapt = alle && codeOk;
+    all('.na-sloten').forEach(function (blok) { blok.classList.toggle('open', ontsnapt || teacherMode); });
+    all('[data-codeslot]').forEach(function (cs) { cs.classList.toggle('open', alle && !codeOk && !teacherMode); });
     all('.slot[data-sloten]').forEach(function (slot) {
       var tekst = slot.querySelector('.slot-tekst');
       var rest = AANTAL_SLOTEN - opgelost.length;
-      slot.classList.toggle('open', alle);
-      if (tekst) tekst.textContent = alle ? 'Alle sloten zijn open. De vier letters vormen het codewoord. Typ het in je werkdocument.' :
+      slot.classList.toggle('open', ontsnapt);
+      if (tekst) tekst.textContent = ontsnapt ? 'Ontsnapt! Typ het codewoord nu ook in je werkdocument.' :
+        alle ? 'Alle vier de sloten zijn open. Zet de letters in volgorde en typ het codewoord hieronder.' :
         'Nog ' + rest + (rest === 1 ? ' slot' : ' sloten') + ' te openen. Doe eerst de kamers in stap 2 en 3. Dan zie je hier wat je nog moet doen.';
     });
   }
@@ -277,6 +284,31 @@
         });
       });
     });
+  });
+
+  /* Het laatste slot (stap 4, Jonas 06-11-2026: "Ik kon precies niets intypen bij de codes"): zijn de vier sloten open,
+   * dan typt het duo het codewoord. Het woord zelf staat niet in de HTML: het zijn de letters uit SLOTEN.
+   * Juist (hoofdletters, spaties en een punt maken niet uit): het blok van stap 4 gaat open, en localStorage onthoudt het. */
+  var CODEWOORD = Object.keys(SLOTEN).map(function (n) { return SLOTEN[n].letter; }).join('');
+  all('[data-codeslot]').forEach(function (cs) {
+    var veld = cs.querySelector('input');
+    var knop = cs.querySelector('button');
+    var fb = cs.querySelector('.feedback');
+    function probeer() {
+      var getypt = (veld.value || '').toUpperCase().replace(/[^A-Z]/g, '');
+      if (!getypt) { fb.textContent = 'Typ eerst de vier letters.'; return; }
+      if (getypt === CODEWOORD) {
+        fb.textContent = '';
+        codeOk = true;
+        if (!teacherMode) store('code', true);
+        toonSloten();
+      } else {
+        cs.classList.remove('fout'); void cs.offsetWidth; cs.classList.add('fout');
+        fb.textContent = 'Nog niet. Kijk naar jullie letters hierboven: kamer 1, 2, 3 en 4, in die volgorde.';
+      }
+    }
+    knop.addEventListener('click', probeer);
+    veld.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); probeer(); } });
   });
 
   /* ---------- 6b. Links in de berichten (Les 13) ----------

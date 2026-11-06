@@ -480,9 +480,10 @@
             <h2 id="h-4">Ontsnapt!</h2>
         </header>
         <div class="card-body">
-          <p class="intro">Zijn alle sloten open? Dan vormen de vier letters het codewoord. Daarna vraagt Sara nog twee dingen.</p>
+          <p class="intro">Zijn alle sloten open? Dan vormen de vier letters het codewoord. Typ het in het laatste slot om te ontsnappen. Daarna vraagt Sara nog twee dingen.</p>
           <div class="letters" data-live><span class="lt-kop">Jullie letters:</span><span class="letter" data-nr="1">?</span><span class="letter" data-nr="2">?</span><span class="letter" data-nr="3">?</span><span class="letter" data-nr="4">?</span></div>
           <p class="slot" aria-live="polite" data-sloten><svg class="ic ic-dicht" aria-hidden="true"><use href="#i-lock"/></svg><svg class="ic ic-open" aria-hidden="true"><use href="#i-check-circle"/></svg><span class="slot-tekst">Nog 4 sloten te openen. Doe eerst de kamers in stap 2 en 3. Dan zie je hier wat je nog moet doen.</span></p>
+          <div class="codeslot" data-codeslot><label for="codewoord"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg> Het laatste slot: typ jullie codewoord.</label><div class="cs-rij"><input id="codewoord" type="text" maxlength="10" autocomplete="off" autocapitalize="characters" spellcheck="false"><button type="button" class="cs-knop">Open het slot</button></div><p class="feedback" role="status"></p></div>
           <div class="na-sloten">
           <div class="todo-box">
             <div class="todo-head"><h3><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg> Wat moet je doen?</h3></div>
