@@ -245,7 +245,7 @@ hook uit `_sjablonen/pre-push`.
   documenten van een duo (dezelfde zinnen) tonen het; samenwerken mag.
 - **Haalbaarheid in 40 minuten.** Per kamer: een bericht lezen, twee vragen, drie vakken typen: ± 6 minuten. Zakt het tempo, dan is de
   minimumroute (deel 2, deel 3, vraag 4a, inleveren) de uitweg.
-- **De sloten**: zijn de twee vragen en de hints haalbaar voor de zwakkere duo's? Blijft een duo hangen op *Wat geeft de doorslag?* (kamer 1)
+- **De sloten**: zijn de twee vragen en de hints haalbaar voor de zwakkere duo's? Blijft een duo hangen op *Waaraan zie je het?* (kamer 1)
   of op het woord vóór `.example` (kamer 2 en 4)? Een duo dat vastzit: kom langs; de hint zegt wat ze moeten doen, het antwoord niet.
 - **Zweven over een link**: de statusbalk onder het bericht is een nagemaakte statusbalk. Begrijpen de leerlingen dat dit hetzelfde is als wat Chrome
   linksonder toont? Zonder muis (touchpad) werkt klikken ook.
